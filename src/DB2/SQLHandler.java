@@ -24,7 +24,13 @@ public class SQLHandler {
 
     private SQLHandler(){
         instance = this;
-
+        try {
+            con = SQLConnection.connect();
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }finally {
+            System.out.println("Verbindung hergestelltelltelltellt!");
+        }
     }
 
     public boolean insert(String table, String neuerWert, String values){
