@@ -1,0 +1,9 @@
+<Einfuegen>
+    <Artikel>
+        <artnr:"3"/>
+        <artbez:"Muffe M8"/>
+        <mge:"Stück"/>
+        <preis:"1.0"/>
+        <kuehl:"TK"/>
+    </Artikel>
+</Einfuegen>
