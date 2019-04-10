@@ -25,4 +25,8 @@ public class MyErrorHandlerE implements ErrorHandler {
         System.out.println("Zeile,Spalte         : " + ep.getLineNumber() + "," + ep.getColumnNumber());
         System.exit(3);
     }
+
+    public void meldung (String m) throws SAXException {
+        System.out.println(m);
+    }
 }

@@ -8,6 +8,9 @@ import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.AttributesImpl;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +18,16 @@ class ContentHandlerKunde implements ContentHandler {
     Kunde kunde;
     List<Kunde> kundenList = new ArrayList<>();
     String aktwert;
-    SQLHandler sql;
+    SQLHandler sql = SQLHandler.getSQLHandler();;
+
+    //Update infos
+    private int in_knr;
+    private String in_usp;
+    private String in_dtsup;
+    private String in_uwert;
+
+
+
 
     public void startDocument() {
         System.out.println("Anfang des Parsens.");
@@ -24,9 +36,10 @@ class ContentHandlerKunde implements ContentHandler {
     public void endDocument() {
         System.out.println("Ende des Parsens: " + kundenList.size() + " Elemente sind wohlgeformt.");
 
-        sql = SQLHandler.getSQLHandler();
 
 
+
+        /*
         for(Kunde k : kundenList){
             int knr = k.getKnr();
             String kname = k.getKname();
@@ -37,27 +50,59 @@ class ContentHandlerKunde implements ContentHandler {
 
             sql.insert("ARTIKEL", "VALUES (" +knr + ", " + kname + ", " + plz + ", " + ort + ", " + strasse + ", " + kklimit + ")");
         }
+        */
 
+        //Update auf Kunde
 
     }
 
-    public void startElement(String uri, String localName, String qName,
-                             Attributes attributes) throws SAXException {
+    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 
-        int i;
-        String gVl = null;
-        String gTy = null;
-        String gNam = null;
-        String gVl4;
-        AttributesImpl a1 = new AttributesImpl(attributes);
-        int l1 = a1.getLength();
-        System.out.println("-A-> Anfang des Elements: " + qName + " Attributanzahl: " + l1);
-        for (i = 0; i < l1; i++) {
-            gVl = a1.getValue(i);
-            gTy = a1.getType(i);
-            gNam = a1.getQName(i);
-            // System.out.println("++"+i+". Attribut: "+gNam+" ("+gTy+") : "+gVl);
+        in_knr = Integer.parseInt(attributes.getValue("KNR"));  //  knr
+        in_usp = attributes.getValue("USP");                    //  Spalte
+        in_dtsup = attributes.getValue("DTUSP");                //  Datentyp
+        in_uwert = attributes.getValue("UWERT");                //  neuer Wert
+
+        //alle Kunden holen
+        Kunde k_neu = sql.select_Kunde_by_KNR(in_knr);
+
+        //logik k_neu aktualisieren
+
+        if(k_neu != null){
+
+            switch (in_usp) {
+                case "KNAME":   k_neu.setKname(in_uwert);
+                    break;
+
+                case "PLZ":     try{
+                    k_neu.setPlz(Integer.parseInt(in_uwert));
+                }catch (Exception e){
+                    throw new SAXException();
+                }
+                    break;
+
+                case "ORT":     k_neu.setOrt(in_uwert);
+                    break;
+
+                case "STRASSE": k_neu.setStrasse(in_uwert);
+                    break;
+
+                case "KKLIMIT": try {
+                    k_neu.setKklimit(Double.parseDouble(in_uwert));
+                }catch (Exception e){
+                    throw new SAXException();
+                }
+                    break;
+
+
+                default:        break;
+            }
         }
+
+
+        //Update sende
+        sql.update_kunde(k_neu);
+
     }
 
     public void characters(char[] ch, int start, int length) throws SAXException {
@@ -72,25 +117,17 @@ class ContentHandlerKunde implements ContentHandler {
         //System.out.println("aktwert: "+aktwert);
 
         switch(qName){
-            case "KNR"      :       kunde = new Kunde();
-                                    kunde.setKnr(Integer.parseInt(aktwert));
-                                    break;
+            case "KNR"      :       in_knr = Integer.parseInt(aktwert);
+                break;
 
-            case "KNAME"    :       kunde.setKname(aktwert);
-                                    break;
+            case "USP"    :         in_usp = aktwert;
+                break;
 
-            case "PLZ"      :       kunde.setPlz(Integer.parseInt(aktwert));
-                                    break;
+            case "DTUSP"      :     in_dtsup = aktwert;
+                break;
 
-            case "ORT"      :       kunde.setOrt(aktwert);
-                                    break;
-
-            case "STRASSE"  :       kunde.setStrasse(aktwert);
-                                    break;
-
-            case "KKLIMIT"  :       kunde.setKklimit(Double.parseDouble(aktwert));
-                                    kundenList.add(kunde);
-                                    break;
+            case "UWERT"      :     in_uwert = aktwert;
+                break;
         }
     }
 

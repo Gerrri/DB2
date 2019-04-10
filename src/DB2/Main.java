@@ -9,7 +9,11 @@ public class Main {
 
         ContentHandlerArtikel c_handler = new ContentHandlerArtikel();
         MyErrorHandlerE e_handler = new MyErrorHandlerE();
+
+
         parser.parseXmlFile("artikel.xml",c_handler,e_handler,true);
+
+
 
     }
 }
