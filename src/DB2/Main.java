@@ -8,10 +8,10 @@ public class Main {
         SAXParserE parser = new SAXParserE();
 
         // test Artikel insert
-        /*ContentHandlerArtikel ac_handler = new ContentHandlerArtikel();
+        ContentHandlerArtikel ac_handler = new ContentHandlerArtikel();
         MyErrorHandlerE ae_handler = new MyErrorHandlerE();
         parser.parseXmlFile("artikel.xml",ac_handler,ae_handler,true);
-          */
+
 
 
         // test Kunden Update

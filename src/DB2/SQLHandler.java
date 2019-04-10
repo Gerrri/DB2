@@ -35,9 +35,17 @@ public class SQLHandler {
     }
 
 
-    public boolean insert(String table, String sql){
+    public boolean insert_artikel(String artbez, String mge, double preis, String kuehl, String edat){
         boolean erg = false;
-        sql = "INSERT INTO " + table + " " + sql;
+
+        /* Beispiel insert: INSERT INTO ARTIKEL (ARTBEZ, MGE, PREIS, KUEHL, EDAT)
+VALUES ('Toast', 'kg', '1', 'NK', '7-JAN-2001')*/
+
+
+        sql = "INSERT INTO ARTIKEL (ARTBEZ, MGE, PREIS, KUEHL, EDAT) VALUES " +
+        "('" + artbez + "', '" + mge + "', "+ preis + ",'" + kuehl + "','" +edat + "')" ;
+
+
 
         try {
             stmt = con.createStatement();

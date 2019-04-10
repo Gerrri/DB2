@@ -35,7 +35,7 @@ public class ContentHandlerArtikel implements ContentHandler {
             String kuehl = a.getKuehl();
             String edat = a.getEdat();
 
-            sql.insert("ARTIKEL", "VALUES (" +artnr + ", " + artbez + ", " + mge + ", " + preis + ", " + kuehl + ", " + edat + ")");
+            sql.insert_artikel(artbez,mge,preis,kuehl,edat);
         }
 
 
