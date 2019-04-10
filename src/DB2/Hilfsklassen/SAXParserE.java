@@ -26,13 +26,13 @@ public class SAXParserE {
             info = "Wohlgeformtheit nur";
         }
         System.out.println("SAXParserE: Jetzt wird der File " + filename + " auf " + info + " geparst.");
-        MyContentHandlerE handler = new MyContentHandlerE();
+        ContentHandlerArtikel handler = new ContentHandlerArtikel();
         MyErrorHandlerE ehandler = new MyErrorHandlerE();
         parseXmlFile(filename, handler, ehandler, a);
     }
     */
 
-    public void parseXmlFile(String filename, MyContentHandlerE handler, MyErrorHandlerE ehandler, boolean val) {
+    public void parseXmlFile(String filename, ContentHandlerArtikel handler, MyErrorHandlerE ehandler, boolean val) {
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             factory.setValidating(val);

@@ -1,6 +1,6 @@
 package DB2.Hilfsklassen;
 
-import DB2.Artikel;
+import DB2.Kunde;
 import DB2.SQLHandler;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
@@ -11,9 +11,9 @@ import org.xml.sax.helpers.AttributesImpl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyContentHandlerE implements ContentHandler {
-    Artikel artikel;
-    List<Artikel> artikelList = new ArrayList<>();
+class ContentHandlerKunde implements ContentHandler {
+    Kunde kunde;
+    List<Kunde> kundenList = new ArrayList<>();
     String aktwert;
     SQLHandler sql;
 
@@ -22,20 +22,20 @@ public class MyContentHandlerE implements ContentHandler {
     }
 
     public void endDocument() {
-        System.out.println("Ende des Parsens: " + artikelList.size() + " Elemente sind wohlgeformt.");
+        System.out.println("Ende des Parsens: " + kundenList.size() + " Elemente sind wohlgeformt.");
 
         sql = SQLHandler.getSQLHandler();
 
 
-        for(Artikel a : artikelList){
-            int artnr = a.getArtnr();
-            String artbez = a.getArtbez();
-            String mge = a.getMge();
-            double preis = a.getPreis();
-            String kuehl = a.getKuehl();
-            String edat = a.getEdat();
+        for(Kunde k : kundenList){
+            int knr = k.getKnr();
+            String kname = k.getKname();
+            int plz = k.getPlz();
+            String ort = k.getOrt();
+            String strasse = k.getStrasse();
+            double kklimit = k.getKklimit();
 
-            sql.insert("ARTIKEL", "VALUES (" +artnr + ", " + artbez + ", " + mge + ", " + preis + ", " + kuehl + ", " + edat + ")");
+            sql.insert("ARTIKEL", "VALUES (" +knr + ", " + kname + ", " + plz + ", " + ort + ", " + strasse + ", " + kklimit + ")");
         }
 
 
@@ -43,6 +43,7 @@ public class MyContentHandlerE implements ContentHandler {
 
     public void startElement(String uri, String localName, String qName,
                              Attributes attributes) throws SAXException {
+
         int i;
         String gVl = null;
         String gTy = null;
@@ -71,25 +72,25 @@ public class MyContentHandlerE implements ContentHandler {
         //System.out.println("aktwert: "+aktwert);
 
         switch(qName){
-            case "ARTNR"    :   artikel = new Artikel();
-                                artikel.setArtnr(Integer.parseInt(aktwert));
-                                break;
+            case "KNR"      :       kunde = new Kunde();
+                                    kunde.setKnr(Integer.parseInt(aktwert));
+                                    break;
 
-            case "ARTBEZ"   :   artikel.setArtbez(aktwert);
-                                break;
+            case "KNAME"    :       kunde.setKname(aktwert);
+                                    break;
 
-            case "MGE"      :   artikel.setMge(aktwert);
-                                break;
+            case "PLZ"      :       kunde.setPlz(Integer.parseInt(aktwert));
+                                    break;
 
-            case "PREIS"    :   artikel.setPreis(Double.parseDouble(aktwert));
-                                break;
+            case "ORT"      :       kunde.setOrt(aktwert);
+                                    break;
 
-            case "KUEHL"    :   artikel.setKuehl(aktwert);
-                                break;
+            case "STRASSE"  :       kunde.setStrasse(aktwert);
+                                    break;
 
-            case "EDAT"     :   artikel.setEdat(aktwert);
-                                artikelList.add(artikel);
-                                break;
+            case "KKLIMIT"  :       kunde.setKklimit(Double.parseDouble(aktwert));
+                                    kundenList.add(kunde);
+                                    break;
         }
     }
 
