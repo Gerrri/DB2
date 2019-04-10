@@ -97,11 +97,11 @@ public class SQLHandler {
 
     public boolean update_kunde (Kunde k){
         boolean erg = false;
-        sql = "UPDATE KUNDE SET KNAME = " + k.getKname() +
-                                ", PLZ = " + k.getPlz() +
-                                ", ORT = " + k.getOrt() +
-                                ", STRASSE = " + k.getStrasse() +
-                                ", KKLIMIT = " + k.getKklimit() +
+        sql = "UPDATE KUNDE SET KNAME = '" + k.getKname() +
+                                "', PLZ = " + k.getPlz() +
+                                ", ORT = '" + k.getOrt() +
+                                "', STRASSE = '" + k.getStrasse() +
+                                "', KKLIMIT = " + k.getKklimit() +
                                 " WHERE KNR = " + k.getKnr();
 
         try {
