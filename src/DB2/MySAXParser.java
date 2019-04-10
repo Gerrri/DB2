@@ -2,6 +2,8 @@ package DB2;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import org.xml.sax.helpers.AttributesImpl;
+
 
 import org.xml.sax.*;
 
@@ -37,7 +39,20 @@ public class MySAXParser{
 
         @Override
         public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
-            //TODO: Parsen
+            int i;
+            String gVl = null;
+            String gTy = null;
+            String gNam = null;
+            String gVl4;
+            AttributesImpl a1 = new AttributesImpl(atts);
+            int l1 = a1.getLength();
+            System.out.println("-A-> Anfang des Elements: " + qName + " Attributanzahl: " + l1);
+            for (i = 0; i < l1; i++) {
+                gVl = a1.getValue(i);
+                gTy = a1.getType(i);
+                gNam = a1.getQName(i);
+                //System.out.println("++"+i+". Attribut: "+gNam+" ("+gTy+") : "+gVl);
+            }
         }
 
         @Override
