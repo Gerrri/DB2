@@ -30,5 +30,4 @@ public class SQLConnection {
         }
         return dbConnect;
     }
-
 }

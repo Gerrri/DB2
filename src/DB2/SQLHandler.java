@@ -28,10 +28,26 @@ public class SQLHandler {
             con = SQLConnection.connect();
         }catch(SQLException e){
             System.out.println(e.getMessage());
-        }finally {
-            System.out.println("Verbindung hergestelltelltelltellt!");
         }
     }
+
+
+    public boolean insert(String table, String sql){
+        boolean erg = false;
+        sql = "INSERT INTO " + table + " " + sql;
+
+        try {
+            stmt = con.createStatement();
+            stmt.executeUpdate(sql);
+            erg = true;
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return erg;
+
+    }
+
 
     public boolean insert(String table, String neuerWert, String values){
         boolean erg = false;
