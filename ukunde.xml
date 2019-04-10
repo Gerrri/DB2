@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE TABLE SYSTEM "ukunde.dtd">
 
--<TABLE NAME="KUNDE">
+<TABLE NAME="KUNDE">
 	<UPDKUNDE KNR="1" USP="ORT" DTUSP="char(30)" UWERT="Bremen"/>
 	<UPDKUNDE KNR="1" USP="PLZ" DTUSP="int" UWERT="27568"/>
 	<UPDKUNDE KNR="2" USP="KKLIMIT" DTUSP="decimal(7.2)" UWERT="1500.00"/>

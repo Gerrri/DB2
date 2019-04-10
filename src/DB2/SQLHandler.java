@@ -76,7 +76,7 @@ public class SQLHandler {
             stmt = con.createStatement();
             rs = stmt.executeQuery(sql);
 
-            rs.first();
+            rs.next();
 
             k = new Kunde();
             k.setKnr(Integer.parseInt(rs.getNString("KNR")));

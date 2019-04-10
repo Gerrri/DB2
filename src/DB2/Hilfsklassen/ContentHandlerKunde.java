@@ -14,7 +14,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-class ContentHandlerKunde implements ContentHandler {
+public class ContentHandlerKunde implements ContentHandler {
     Kunde kunde;
     List<Kunde> kundenList = new ArrayList<>();
     String aktwert;
@@ -58,52 +58,65 @@ class ContentHandlerKunde implements ContentHandler {
 
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 
-        in_knr = Integer.parseInt(attributes.getValue("KNR"));  //  knr
-        in_usp = attributes.getValue("USP");                    //  Spalte
-        in_dtsup = attributes.getValue("DTUSP");                //  Datentyp
-        in_uwert = attributes.getValue("UWERT");                //  neuer Wert
 
-        //alle Kunden holen
-        Kunde k_neu = sql.select_Kunde_by_KNR(in_knr);
+        if(qName.equalsIgnoreCase("UPDKUNDE")) {
 
-        //logik k_neu aktualisieren
+            in_knr = Integer.parseInt(attributes.getValue("KNR"));  //  knr
+            in_usp = attributes.getValue("USP");                    //  Spalte
+            in_dtsup = attributes.getValue("DTUSP");                //  Datentyp
+            in_uwert = attributes.getValue("UWERT");                //  neuer Wert
 
-        if(k_neu != null){
 
-            switch (in_usp) {
-                case "KNAME":   k_neu.setKname(in_uwert);
-                    break;
+            //alle Kunden holen
+            Kunde k_neu = sql.select_Kunde_by_KNR(in_knr);
 
-                case "PLZ":     try{
-                    k_neu.setPlz(Integer.parseInt(in_uwert));
-                }catch (Exception e){
-                    throw new SAXException();
+            //logik k_neu aktualisieren
+
+            if (k_neu != null) {
+
+                switch (in_usp) {
+                    case "KNAME":
+                        k_neu.setKname(in_uwert);
+                        sql.update_kunde(k_neu);
+                        break;
+
+                    case "PLZ":
+                        try {
+                            k_neu.setPlz(Integer.parseInt(in_uwert));
+                            sql.update_kunde(k_neu);
+                        } catch (Exception e) {
+                            throw new SAXException();
+                        }
+                        break;
+
+                    case "ORT":
+                        k_neu.setOrt(in_uwert);
+                        sql.update_kunde(k_neu);
+                        break;
+
+                    case "STRASSE":
+                        k_neu.setStrasse(in_uwert);
+                        sql.update_kunde(k_neu);
+                        break;
+
+                    case "KKLIMIT":
+                        try {
+                            k_neu.setKklimit(Double.parseDouble(in_uwert));
+                            sql.update_kunde(k_neu);
+                        } catch (Exception e) {
+                            throw new SAXException();
+                        }
+                        break;
+
+
+                    default:
+                        break;
                 }
-                    break;
-
-                case "ORT":     k_neu.setOrt(in_uwert);
-                    break;
-
-                case "STRASSE": k_neu.setStrasse(in_uwert);
-                    break;
-
-                case "KKLIMIT": try {
-                    k_neu.setKklimit(Double.parseDouble(in_uwert));
-                }catch (Exception e){
-                    throw new SAXException();
-                }
-                    break;
-
-
-                default:        break;
             }
         }
 
-
-        //Update sende
-        sql.update_kunde(k_neu);
-
     }
+
 
     public void characters(char[] ch, int start, int length) throws SAXException {
         String h = null;

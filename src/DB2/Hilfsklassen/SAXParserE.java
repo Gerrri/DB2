@@ -32,7 +32,7 @@ public class SAXParserE {
     }
     */
 
-    public void parseXmlFile(String filename, ContentHandlerArtikel handler, MyErrorHandlerE ehandler, boolean val) {
+    public void parseXmlFile(String filename, ContentHandler handler, MyErrorHandlerE ehandler, boolean val) {
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             factory.setValidating(val);

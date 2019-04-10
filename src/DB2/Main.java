@@ -7,12 +7,17 @@ public class Main {
     public static void main(String[] args){
         SAXParserE parser = new SAXParserE();
 
-        ContentHandlerArtikel c_handler = new ContentHandlerArtikel();
-        MyErrorHandlerE e_handler = new MyErrorHandlerE();
+        // test Artikel insert
+        /*ContentHandlerArtikel ac_handler = new ContentHandlerArtikel();
+        MyErrorHandlerE ae_handler = new MyErrorHandlerE();
+        parser.parseXmlFile("artikel.xml",ac_handler,ae_handler,true);
+          */
 
 
-        parser.parseXmlFile("artikel.xml",c_handler,e_handler,true);
-
+        // test Kunden Update
+        ContentHandlerKunde kc_handler = new ContentHandlerKunde();
+        MyErrorHandlerE ce_handler = new MyErrorHandlerE();
+        parser.parseXmlFile("ukunde.xml",kc_handler, ce_handler, true);
 
 
     }
