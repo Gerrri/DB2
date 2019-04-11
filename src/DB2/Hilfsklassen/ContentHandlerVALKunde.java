@@ -30,25 +30,6 @@ public class ContentHandlerVALKunde extends MyContentHandlerVAL {
 
     public void endDocument() {
         System.out.println("Ende des Parsens: " + kundenList.size() + " Elemente sind wohlgeformt.");
-
-
-
-
-        /*
-        for(Kunde k : kundenList){
-            int knr = k.getKnr();
-            String kname = k.getKname();
-            int plz = k.getPlz();
-            String ort = k.getOrt();
-            String strasse = k.getStrasse();
-            double kklimit = k.getKklimit();
-
-            sql.insert("ARTIKEL", "VALUES (" +knr + ", " + kname + ", " + plz + ", " + ort + ", " + strasse + ", " + kklimit + ")");
-        }
-        */
-
-        //Update auf Kunde
-
     }
 
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
@@ -66,7 +47,6 @@ public class ContentHandlerVALKunde extends MyContentHandlerVAL {
             Kunde k_neu = sql.select_Kunde_by_KNR(in_knr);
 
             //logik k_neu aktualisieren
-
             if (k_neu != null) {
 
                 switch (in_usp) {

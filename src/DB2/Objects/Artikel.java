@@ -100,7 +100,6 @@ public class Artikel {
         return true;
     }
 
-
     private boolean isValidDate(String inDate) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         dateFormat.setLenient(false);
