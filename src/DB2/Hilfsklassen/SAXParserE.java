@@ -26,18 +26,23 @@ public class SAXParserE {
             info = "Wohlgeformtheit nur";
         }
         System.out.println("SAXParserE: Jetzt wird der File " + filename + " auf " + info + " geparst.");
-        ContentHandlerArtikel handler = new ContentHandlerArtikel();
+        ContentHandlerVALArtikel handler = new ContentHandlerVALArtikel();
         MyErrorHandlerE ehandler = new MyErrorHandlerE();
         parseXmlFile(filename, handler, ehandler, a);
     }
     */
 
-    public void parseXmlFile(String filename, ContentHandler handler, MyErrorHandlerE ehandler, boolean val) {
+    public void parseXmlFile(String filename, MyContentHandlerVAL handler, MyErrorHandlerE ehandler, boolean val) {
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             factory.setValidating(val);
             SAXParser saxpars1 = factory.newSAXParser();
             XMLReader read1 = saxpars1.getXMLReader();
+
+            //validate info an Handler weiter geben (Eigenes abstracte klasse über Handler mit val)
+            handler.setval(val);
+
+
             read1.setContentHandler(handler);
             read1.setErrorHandler(ehandler);
             boolean w1 = saxpars1.isValidating();

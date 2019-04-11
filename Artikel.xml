@@ -2,12 +2,22 @@
 <!DOCTYPE TABLE SYSTEM "artikel.dtd">
 
 <TABLE NAME="ALLEARTIKEL">
+  
+    <ARTIKEL>
+        <ARTNR DT="number">101</ARTNR>
+        <ARTBEZ DT="varchar(50)">Deo</ARTBEZ>
+        <MGE DT="varchar(10)">stk</MGE>
+        <PREIS DT="float">1.29</PREIS>
+        <KUEHL DT="varchar(10)">NK</KUEHL>
+        <EDAT DT="date">17-12-2002</EDAT>
+    </ARTIKEL>
+
     <ARTIKEL>
         <ARTNR DT="number">3</ARTNR>
         <ARTBEZ DT="varchar(50)">Toast</ARTBEZ>
         <MGE DT="varchar(10)">kg</MGE>
         <PREIS DT="float">3.99</PREIS>
-		<KUEHL DT="varchar(10)">NK</KUEHL>
-        <EDAT DT="date">17-JAN-2001</EDAT>
+        <KUEHL DT="varchar(10)">NK</KUEHL>
+        <EDAT DT="date">17-01-2001</EDAT>
     </ARTIKEL>
 </TABLE>

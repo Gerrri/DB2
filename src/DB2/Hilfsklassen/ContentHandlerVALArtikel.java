@@ -3,7 +3,6 @@ package DB2.Hilfsklassen;
 import DB2.Objects.Artikel;
 import DB2.SQL.SQLHandler;
 import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.AttributesImpl;
@@ -11,7 +10,7 @@ import org.xml.sax.helpers.AttributesImpl;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContentHandlerArtikel implements ContentHandler {
+public class ContentHandlerVALArtikel extends MyContentHandlerVAL {
     Artikel artikel;
     List<Artikel> artikelList = new ArrayList<>();
     String aktwert;
@@ -69,27 +68,52 @@ public class ContentHandlerArtikel implements ContentHandler {
     public void endElement(String uri, String localName, String qName) throws SAXException {
         System.out.println("-E-> Ende des Elements: " + qName + " .");
         //System.out.println("aktwert: "+aktwert);
+        try {
 
-        switch(qName){
-            case "ARTNR"    :   artikel = new Artikel();
-                                artikel.setArtnr(Integer.parseInt(aktwert));
-                                break;
 
-            case "ARTBEZ"   :   artikel.setArtbez(aktwert);
-                                break;
+            switch (qName) {
+                case "ARTNR":
+                    artikel = new Artikel();
+                    artikel.setArtnr(Integer.parseInt(aktwert));
+                    break;
 
-            case "MGE"      :   artikel.setMge(aktwert);
-                                break;
+                case "ARTBEZ":
+                    artikel.setArtbez(aktwert);
+                    break;
 
-            case "PREIS"    :   artikel.setPreis(Double.parseDouble(aktwert));
-                                break;
+                case "MGE":
+                    artikel.setMge(aktwert);
+                    break;
 
-            case "KUEHL"    :   artikel.setKuehl(aktwert);
-                                break;
+                case "PREIS":
+                    artikel.setPreis(Double.parseDouble(aktwert));
+                    break;
 
-            case "EDAT"     :   artikel.setEdat(aktwert);
-                                artikelList.add(artikel);
-                                break;
+                case "KUEHL":
+                    artikel.setKuehl(aktwert);
+                    break;
+
+                case "EDAT":
+                    artikel.setEdat(aktwert);
+
+                    //WENN validierung an und Artikel OK hinzufügen
+                    if (val) {
+                        if (artikel.validateArtikel()) {
+                            System.out.println("-I-> Artikel Valide");
+                            artikelList.add(artikel);
+                        } else {
+                            throw new SAXException();
+                        }
+                    } else {
+                        artikelList.add(artikel);
+                    }
+
+                    break;
+            }
+        }catch (Exception e){
+            //Wenn oben irgendetwas nicht funktioniert (Parsen, checken etc)
+            System.out.println("ERROR : " + e.getMessage());
+            throw new SAXException();
         }
     }
 

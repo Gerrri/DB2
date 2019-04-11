@@ -58,8 +58,13 @@ public class Kunde {
 
     public boolean validateKunde(){
 
+        // alle not null Prüfen
+        if(kname == null || plz == 0 || ort == null || strasse == null || kklimit == 0){
+            return false;
+        }
+
         //VALIDATE PLZ (5 stellig)
-            if(plz < 100000){
+            if(plz > 99999){
                 return false;
             }
 
@@ -68,7 +73,7 @@ public class Kunde {
             int temp_i;
 
             // Nachkommastellen Check (max 2)
-            if(temp_d % 100 != 0){
+            if(temp_d % 1 != 0){
                 return false;
             }else{
                 //checke stellen <= 7 vor ","
@@ -80,9 +85,5 @@ public class Kunde {
         return true;
     }
 
-    private int intLength (int i){
-        String s = String.valueOf(i);
-        return s.length();
-    }
 
 }

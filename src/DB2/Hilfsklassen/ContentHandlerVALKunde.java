@@ -3,14 +3,13 @@ package DB2.Hilfsklassen;
 import DB2.Objects.Kunde;
 import DB2.SQL.SQLHandler;
 import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContentHandlerKunde implements ContentHandler {
+public class ContentHandlerVALKunde extends MyContentHandlerVAL {
     Kunde kunde;
     List<Kunde> kundenList = new ArrayList<>();
     String aktwert;
@@ -98,7 +97,23 @@ public class ContentHandlerKunde implements ContentHandler {
                     case "KKLIMIT":
                         try {
                             k_neu.setKklimit(Double.parseDouble(in_uwert));
-                            sql.update_kunde(k_neu);
+
+                            //WENN validierung an und Kunde OK hinzufügen
+                            if(val){
+                                if(k_neu.validateKunde()){
+                                    System.out.println("-I-> Kunde Valide");
+                                    sql.update_kunde(k_neu);
+                                    kundenList.add(k_neu);
+                                }else{
+                                    throw new SAXException();
+                                }
+                            } else {
+                                sql.update_kunde(k_neu);
+                                kundenList.add(k_neu);
+                            }
+
+
+
                         } catch (Exception e) {
                             throw new SAXException();
                         }
@@ -121,6 +136,7 @@ public class ContentHandlerKunde implements ContentHandler {
         aktwert = h;
     }
 
+    /*akutell unnötig?*/
     public void endElement(String uri, String localName, String qName) throws SAXException {
         System.out.println("-E-> Ende des Elements: " + qName + " .");
         //System.out.println("aktwert: "+aktwert);

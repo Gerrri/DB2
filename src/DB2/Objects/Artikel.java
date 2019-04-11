@@ -62,7 +62,11 @@ public class Artikel {
     }
 
     public boolean validateArtikel(){
-        boolean val = false;
+
+        // alle not null Prüfen
+        if(artbez == null || mge == null || preis == 0 || kuehl == null || edat == null){
+            return false;
+        }
 
         // VALIDATE KUEHL = TK || KS || NK
             if(!    (kuehl.equalsIgnoreCase("TK") ||
@@ -77,7 +81,7 @@ public class Artikel {
             int temp_i;
 
             // Nachkommastellen Check (max 2)
-            if(temp_d % 100 != 0){
+            if(temp_d % 1 != 0){
                 return false;
             }else{
                 //checke stellen <= 7 vor ","

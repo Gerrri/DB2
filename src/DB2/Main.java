@@ -8,14 +8,14 @@ public class Main {
         SAXParserE parser = new SAXParserE();
 
         // test Artikel insert
-        ContentHandlerArtikel ac_handler = new ContentHandlerArtikel();
+        ContentHandlerVALArtikel ac_handler = new ContentHandlerVALArtikel();
         MyErrorHandlerE ae_handler = new MyErrorHandlerE();
         parser.parseXmlFile("artikel.xml",ac_handler,ae_handler,true);
 
 
 
         // test Kunden Update
-        ContentHandlerKunde kc_handler = new ContentHandlerKunde();
+        ContentHandlerVALKunde kc_handler = new ContentHandlerVALKunde();
         MyErrorHandlerE ce_handler = new MyErrorHandlerE();
         parser.parseXmlFile("ukunde.xml",kc_handler, ce_handler, true);
 
