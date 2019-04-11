@@ -7,11 +7,26 @@
     <list default="true" id="e94cb453-c0e7-47db-aca8-8fe6615473ba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DB2/DB2/SQLHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DB2/DB2/SQLHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DB2/META-INF/DB2.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/DB2/Artikel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/DB2/Hilfsklassen/ContentHandlerArtikel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/DB2/Hilfsklassen/ContentHandlerKunde.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/DB2/Hilfsklassen/MyErrorHandlerE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/DB2/Hilfsklassen/SAXParserE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/DB2/Kunde.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/DB2/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/DB2/SQLConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/DB2/SQLHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/dbZ1/ISAMArtikel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/dbZ1/ISAMvw.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/dbZ2/Connect$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/dbZ2/Connect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/dbZ2/JDBC_Verwaltung.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DB2/Artikel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/Objects/Artikel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerArtikel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerArtikel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB2/SQLHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/SQLHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerKunde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerKunde.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DB2/Kunde.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/Objects/Kunde.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DB2/SQLConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/SQL/SQLConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DB2/SQLHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/SQL/SQLHandler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,7 +40,7 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5487042">
+    <splitter split-orientation="horizontal" split-proportion="0.35029587">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -43,8 +58,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/DB2/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+                <state relative-caret-position="340">
+                  <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
                 </state>
               </provider>
             </entry>
@@ -61,11 +76,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/DB2/SQLHandler.java">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/DB2/SQL/SQLHandler.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+                <state relative-caret-position="153">
+                  <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -76,26 +91,30 @@
           <file pinned="false" current-in-tab="false">
             <entry file="jar://$PROJECT_DIR$/ojdbc7.jar!/oracle/jdbc/driver/PhysicalConnection.class">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="74052">
+                <state relative-caret-position="73984">
                   <caret line="4598" selection-start-line="4598" selection-end-line="4598" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/DB2/Artikel.java">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/DB2/Objects/Artikel.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+                <state relative-caret-position="543">
+                  <caret line="83" column="20" lean-forward="true" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="20" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="method#isValidDate#0;class#Artikel#0" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/DB2/SQLConnection.java">
+            <entry file="file://$PROJECT_DIR$/src/DB2/SQL/SQLConnection.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="25" selection-start-line="25" selection-end-line="25" />
+                <state relative-caret-position="153">
+                  <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -119,7 +138,7 @@
             <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerKunde.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="136">
-                  <caret line="20" selection-start-line="20" selection-end-line="20" />
+                  <caret line="16" selection-start-line="16" selection-end-line="16" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#characters#0;class#ContentHandlerKunde#0" />
@@ -133,11 +152,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerArtikel.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="258">
-                  <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+                  <caret line="40" selection-start-line="40" selection-end-line="40" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -145,18 +164,15 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/DB2/Kunde.java">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/DB2/Objects/Kunde.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+                <state relative-caret-position="725">
+                  <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
                   <folding>
                     <element signature="e#331#332#0" expanded="true" />
                     <element signature="e#359#360#0" expanded="true" />
-                    <element signature="e#859#860#0" expanded="true" />
-                    <element signature="e#889#890#0" expanded="true" />
-                    <element signature="e#935#936#0" expanded="true" />
-                    <element signature="e#973#974#0" expanded="true" />
+                    <element signature="method#intLength#0;class#Kunde#0" />
                   </folding>
                 </state>
               </provider>
@@ -197,14 +213,16 @@
         <option value="$PROJECT_DIR$/src/DB2/Main.java" />
         <option value="$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerArtikel.java" />
         <option value="$PROJECT_DIR$/src/DB2/SQLHandler.java" />
+        <option value="$PROJECT_DIR$/src/DB2/Objects/Artikel.java" />
+        <option value="$PROJECT_DIR$/src/DB2/Objects/Kunde.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-194" />
-    <option name="y" value="-18" />
+    <option name="x" value="257" />
+    <option name="y" value="-14" />
     <option name="width" value="1524" />
-    <option name="height" value="1400" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -237,7 +255,7 @@
               <item name="DB2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DB2" type="462c0819:PsiDirectoryNode" />
-              <item name="Hilfsklassen" type="462c0819:PsiDirectoryNode" />
+              <item name="Objects" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DB2" type="b2602c69:ProjectViewProjectNode" />
@@ -255,7 +273,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554923791048" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554968397094" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -302,12 +320,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
+    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Capture Tool" order="0" />
       <window_info id="Image Layers" order="1" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.15419501" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.15584415" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="4" />
       <window_info id="UI Designer" order="5" />
@@ -332,6 +350,20 @@
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/DB2/Objects/Artikel.java</url>
+          <line>63</line>
+          <properties class="DB2.Objects.Artikel" method="validateArtikel">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/String.java" />
@@ -362,25 +394,8 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/ojdbc7.jar!/oracle/jdbc/driver/PhysicalConnection.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74052">
+        <state relative-caret-position="73984">
           <caret line="4598" selection-start-line="4598" selection-end-line="4598" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB2/Artikel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB2/SQLConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -397,7 +412,7 @@
     <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerKunde.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#characters#0;class#ContentHandlerKunde#0" />
@@ -406,44 +421,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB2/Kunde.java">
+    <entry file="file://$PROJECT_DIR$/src/DB2/SQL/SQLConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="51" column="23" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
-            <element signature="e#331#332#0" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#889#890#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-            <element signature="e#973#974#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB2/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/DB2/SQL/SQLHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerArtikel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB2/SQLHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/DB2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB2/Objects/Artikel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="83" column="20" lean-forward="true" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#isValidDate#0;class#Artikel#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB2/Objects/Kunde.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="method#intLength#0;class#Kunde#0" />
           </folding>
         </state>
       </provider>

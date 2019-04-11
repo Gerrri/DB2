@@ -1,4 +1,4 @@
-package DB2;
+package DB2.Objects;
 
 public class Kunde {
     private int knr;
@@ -55,4 +55,34 @@ public class Kunde {
     public void setKklimit(double kklimit) {
         this.kklimit = kklimit;
     }
+
+    public boolean validateKunde(){
+
+        //VALIDATE PLZ (5 stellig)
+            if(plz < 100000){
+                return false;
+            }
+
+        //VALIDATE kklimit
+            double temp_d = kklimit*100;
+            int temp_i;
+
+            // Nachkommastellen Check (max 2)
+            if(temp_d % 100 != 0){
+                return false;
+            }else{
+                //checke stellen <= 7 vor ","
+                if(!((int)temp_d < 1000000000)){
+                    return false;
+                }
+            }
+
+        return true;
+    }
+
+    private int intLength (int i){
+        String s = String.valueOf(i);
+        return s.length();
+    }
+
 }

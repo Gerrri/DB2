@@ -1,10 +1,8 @@
-package DB2;
+package DB2.SQL;
+
+import DB2.Objects.Kunde;
 
 import java.sql.Connection;
-import oracle.jdbc.pool.*;
-import org.omg.CORBA.INTERNAL;
-
-import javax.xml.transform.Result;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;

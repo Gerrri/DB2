@@ -1,4 +1,4 @@
-package DB2;
+package DB2.SQL;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

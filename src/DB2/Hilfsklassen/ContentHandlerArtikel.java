@@ -1,7 +1,7 @@
 package DB2.Hilfsklassen;
 
-import DB2.Artikel;
-import DB2.SQLHandler;
+import DB2.Objects.Artikel;
+import DB2.SQL.SQLHandler;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;

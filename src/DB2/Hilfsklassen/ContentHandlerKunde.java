@@ -1,16 +1,12 @@
 package DB2.Hilfsklassen;
 
-import DB2.Kunde;
-import DB2.SQLHandler;
+import DB2.Objects.Kunde;
+import DB2.SQL.SQLHandler;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
-import org.xml.sax.helpers.AttributesImpl;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
