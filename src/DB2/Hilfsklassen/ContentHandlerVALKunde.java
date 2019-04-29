@@ -52,13 +52,13 @@ public class ContentHandlerVALKunde extends MyContentHandlerVAL {
                 switch (in_usp) {
                     case "KNAME":
                         k_neu.setKname(in_uwert);
-                        sql.update_kunde(k_neu);
+                        updateKundeAusgabe(k_neu);
                         break;
 
                     case "PLZ":
                         try {
                             k_neu.setPlz(Integer.parseInt(in_uwert));
-                            sql.update_kunde(k_neu);
+                            updateKundeAusgabe(k_neu);
                         } catch (Exception e) {
                             throw new SAXException();
                         }
@@ -66,12 +66,12 @@ public class ContentHandlerVALKunde extends MyContentHandlerVAL {
 
                     case "ORT":
                         k_neu.setOrt(in_uwert);
-                        sql.update_kunde(k_neu);
+                        updateKundeAusgabe(k_neu);
                         break;
 
                     case "STRASSE":
                         k_neu.setStrasse(in_uwert);
-                        sql.update_kunde(k_neu);
+                        updateKundeAusgabe(k_neu);
                         break;
 
                     case "KKLIMIT":
@@ -82,13 +82,13 @@ public class ContentHandlerVALKunde extends MyContentHandlerVAL {
                             if(val){
                                 if(k_neu.validateKunde()){
                                     System.out.println("-I-> Kunde Valide");
-                                    sql.update_kunde(k_neu);
+                                    updateKundeAusgabe(k_neu);
                                     kundenList.add(k_neu);
                                 }else{
                                     throw new SAXException();
                                 }
                             } else {
-                                sql.update_kunde(k_neu);
+                                updateKundeAusgabe(k_neu);
                                 kundenList.add(k_neu);
                             }
 
@@ -106,6 +106,18 @@ public class ContentHandlerVALKunde extends MyContentHandlerVAL {
             }
         }
 
+    }
+
+
+    public void updateKundeAusgabe(Kunde kunde){
+        Kunde akt_kunde;
+        akt_kunde = sql.select_Kunde_by_KNR(kunde.getKnr());
+
+        System.out.println("KNR: " + akt_kunde.getKnr() + " | KNAME: " + akt_kunde.getKname() + " | PLZ: "+ akt_kunde.getPlz()+" | ORT: "+ akt_kunde.getOrt() + " | STRASSE: "+ akt_kunde.getStrasse() + " | KKLIMIT: " + akt_kunde.getKklimit());
+        sql.update_kunde(kunde);
+
+        akt_kunde = sql.select_Kunde_by_KNR(kunde.getKnr());
+        System.out.println("KNR: " + akt_kunde.getKnr() + " | KNAME: " + akt_kunde.getKname() + " | PLZ: "+ akt_kunde.getPlz()+" | ORT: "+ akt_kunde.getOrt() + " | STRASSE: "+ akt_kunde.getStrasse() + " | KKLIMIT: " + akt_kunde.getKklimit());
     }
 
 
