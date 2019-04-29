@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE TABLE SYSTEM "ukunde.dtd">
+
+<TABLE NAME="KUNDE">
+	<UPDKUNDE KNR="1" USP="ORT" DTUSP="char(30)" UWERT="Ort1"/>
+	<UPDKUNDE KNR="1" USP="PLZ" DTUSP="int" UWERT="11111"/>
+	<UPDKUNDE KNR="2" USP="KKLIMIT" DTUSP="decimal(7.2)" UWERT="2"/>
+	<UPDKUNDE KNR="3" USP="KNAME" DTUSP="char(20)" UWERT="K3"/>
+	<UPDKUNDE KNR="4" USP="STRASSE" DTUSP="char(20)" UWERT="Strasse4"/>	
+</TABLE>
