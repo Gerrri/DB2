@@ -14,7 +14,7 @@ import org.xml.sax.*;
  *
  * @author Lammertz,Asbach
  */
-public class SAXParserE {
+public class SAXParserE_DTD {
     /*
     public static void main(String[] args) {
         String filename = args[0], info;
@@ -25,7 +25,7 @@ public class SAXParserE {
             a = false;
             info = "Wohlgeformtheit nur";
         }
-        System.out.println("SAXParserE: Jetzt wird der File " + filename + " auf " + info + " geparst.");
+        System.out.println("SAXParserE_DTD: Jetzt wird der File " + filename + " auf " + info + " geparst.");
         ContentHandlerVALArtikel handler = new ContentHandlerVALArtikel();
         MyErrorHandlerE ehandler = new MyErrorHandlerE();
         parseXmlFile(filename, handler, ehandler, a);
@@ -50,6 +50,8 @@ public class SAXParserE {
             String h1 = new File(filename).toURL().toString();
             System.out.println("URI = " + h1);
             read1.parse(new File(filename).toURL().toString());
+
+
         } catch (SAXParseException ep) {// A parsing error occurred; the xml input is not valid
             System.out.println("SAx-Parser-Ausnahme in " + filename + " :\n" + ep);
             System.out.println("Parser meldet FEHLER : " + ep.toString());

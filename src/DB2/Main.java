@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        SAXParserE parser = new SAXParserE();
+        SAXParserE_DTD parser = new SAXParserE_DTD();
         BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
         int auswahl;
         boolean update = false;
@@ -17,8 +17,9 @@ public class Main {
 
         do {
             System.out.println("Wofuer wollen Sie das Programm verwenden?");
-            System.out.println("Bitte geben Sie '1' ein, wenn Sie Artikel hinzufuegen wollen.");
+            System.out.println("Bitte geben Sie '1' ein, wenn Sie Artikel hinzufuegen wollen. [DTD]");
             System.out.println("Bitte geben Sie '2' ein, wenn Sie Kunden updaten wollen.");
+            System.out.println("Bitte geben Sie '3' ein, wenn Sie Artikel hinzufuegen wollen. [XSD]");
             auswahl = Integer.parseInt(br1.readLine());
             if(auswahl == 2){
                 System.out.println("Waehlen Sie bitte, ob Sie das Update zuruecksetzen wollen, oder ob Sie es ausführen wollen!");
@@ -43,6 +44,7 @@ public class Main {
                 MyErrorHandlerE ae_handler = new MyErrorHandlerE();
                 parser.parseXmlFile("artikel.xml",ac_handler,ae_handler,true);
                 break;
+
             case 2:
                 // test Kunden Update
                 ContentHandlerVALKunde kc_handler = new ContentHandlerVALKunde();
@@ -52,6 +54,13 @@ public class Main {
                 }else{
                     parser.parseXmlFile("resettukunde.xml",kc_handler, ce_handler, true);
                 }
+
+            case 3:
+                // test Artikel insert
+                ContentHandlerVALArtikel ac_handler = new ContentHandlerVALArtikel();
+                MyErrorHandlerE ae_handler = new MyErrorHandlerE();
+                parser.parseXmlFile("artikel.xml",ac_handler,ae_handler,true);
+                break;
 
         }
 
