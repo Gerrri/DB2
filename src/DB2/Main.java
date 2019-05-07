@@ -9,7 +9,8 @@ import java.io.InputStreamReader;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        SAXParserE_DTD parser = new SAXParserE_DTD();
+        SAXParserE_DTD saxParserE_dtd = new SAXParserE_DTD();
+        SAXParserE_XSD saxParserE_xsd = new SAXParserE_XSD();
         BufferedReader br1 = new BufferedReader(new InputStreamReader(System.in));
         int auswahl;
         boolean update = false;
@@ -35,14 +36,17 @@ public class Main {
                     auswahl = 3;
                 }
             }
-        }while(!(auswahl == 1 || auswahl == 2));
+        }while(!(auswahl == 1 || auswahl == 2 || auswahl == 3));
 
+
+        ContentHandlerVALArtikel ac_handler;
+        MyErrorHandlerE ae_handler;
         switch (auswahl){
             case 1:
-                // test Artikel insert
-                ContentHandlerVALArtikel ac_handler = new ContentHandlerVALArtikel();
-                MyErrorHandlerE ae_handler = new MyErrorHandlerE();
-                parser.parseXmlFile("artikel.xml",ac_handler,ae_handler,true);
+                // test Artikel insert DTD
+                ac_handler = new ContentHandlerVALArtikel();
+                ae_handler = new MyErrorHandlerE();
+                saxParserE_dtd.parseXmlFile("artikel.xml",ac_handler,ae_handler,true);
                 break;
 
             case 2:
@@ -50,25 +54,18 @@ public class Main {
                 ContentHandlerVALKunde kc_handler = new ContentHandlerVALKunde();
                 MyErrorHandlerE ce_handler = new MyErrorHandlerE();
                 if(update == true){
-                    parser.parseXmlFile("ukunde.xml",kc_handler, ce_handler, true);
+                    saxParserE_dtd.parseXmlFile("ukunde.xml",kc_handler, ce_handler, true);
                 }else{
-                    parser.parseXmlFile("resettukunde.xml",kc_handler, ce_handler, true);
+                    saxParserE_dtd.parseXmlFile("resettukunde.xml",kc_handler, ce_handler, true);
                 }
 
             case 3:
-                // test Artikel insert
-                ContentHandlerVALArtikel ac_handler = new ContentHandlerVALArtikel();
-                MyErrorHandlerE ae_handler = new MyErrorHandlerE();
-                parser.parseXmlFile("artikel.xml",ac_handler,ae_handler,true);
+                // test Artikel insert XSD
+                ac_handler = new ContentHandlerVALArtikel();
+                ae_handler = new MyErrorHandlerE();
+                saxParserE_xsd.parseXmlFile("artikel1.xml",ac_handler,ae_handler,true);
                 break;
 
         }
-
-
-
-
-
-
-
     }
 }

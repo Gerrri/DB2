@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE TABLE SYSTEM "artikel.dtd">
-
 <TABLE NAME="ALLEARTIKEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ARTIKEL1.XSD">
   
     <ARTIKEL>
         <ARTNR>101</ARTNR>
-        <ARTBEZ>Deo</ARTBEZ>
+        <ARTBEZ>Deo12</ARTBEZ>
         <MGE>stk</MGE>
         <PREIS>1.29</PREIS>
         <KUEHL>NK</KUEHL>
@@ -14,8 +12,8 @@
 
     <ARTIKEL>
         <ARTNR>3</ARTNR>
-        <ARTBEZ>Toast</ARTBEZ>
-        <MGE">kg</MGE>
+        <ARTBEZ>Toast12</ARTBEZ>
+        <MGE>kg</MGE>
         <PREIS>3.99</PREIS>
         <KUEHL>NK</KUEHL>
         <EDAT>17-01-2001</EDAT>
