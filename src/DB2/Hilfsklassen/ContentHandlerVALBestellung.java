@@ -26,6 +26,7 @@ public class ContentHandlerVALBestellung extends MyContentHandlerVAL{
     @Override
     public void startDocument() throws SAXException {
         System.out.println("Anfang des Parsens.");
+        sql = SQLHandler.getSQLHandler();
     }
 
     @Override
@@ -87,6 +88,7 @@ public class ContentHandlerVALBestellung extends MyContentHandlerVAL{
 
                 // ab hier Artikel
                 case "ARTNR":
+
                     artikel = sql.select_Artikel_by_ARTNR(Integer.parseInt(aktwert));
 
                     //WENN validierung an und Artikel OK hinzufügen
@@ -102,7 +104,7 @@ public class ContentHandlerVALBestellung extends MyContentHandlerVAL{
                     }
                     break;
 
-                case "BESTELLUNG2":
+                case "BESTELLUNG":
                     bestllungList.add(bestellung);
                     break;
 

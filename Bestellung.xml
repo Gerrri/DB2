@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <TABLE NAME="BESTELLUNG2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Bestellung.XSD">
     <BESTELLUNG>
-		<KNR DT="number">3</KNR>
-		<STATUS DT="varchar(50)">1</STATUS>
-		
-		<ARTNR DT="number">1</ARTNR>
-		<ARTNR DT="number">2</ARTNR>
-		          
-	</BESTELLUNG>	
+		<KNR>3</KNR>
+		<STATUS>1</STATUS>
+		<ARTNR>1</ARTNR>
+		<ARTNR>2</ARTNR>
+		<ARTNR>1</ARTNR>
+		<ARTNR>1</ARTNR>
+	</BESTELLUNG>
 </TABLE>

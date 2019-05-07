@@ -9,7 +9,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SQLHandler {
 
@@ -92,7 +94,7 @@ VALUES ('Toast', 'kg', '1', 'NK', '7-JAN-2001')*/
             a.setArtnr(Integer.parseInt(rs.getNString("ARTNR")));
             a.setArtbez(rs.getNString("ARTBEZ"));
             a.setMge(rs.getNString("MGE"));
-            a.setPreis(Integer.parseInt(rs.getNString("PREIS")));
+            a.setPreis(Double.parseDouble(rs.getNString("PREIS")));
             a.setKuehl(rs.getNString("KUEHL"));
             a.setEdat(rs.getNString("EDAT"));
 
@@ -169,27 +171,46 @@ VALUES ('Toast', 'kg', '1', 'NK', '7-JAN-2001')*/
 
         Artikel t;
         int anz=0;
-        List<Artikel> ls_temp = ls;
+        List<Artikel> ls_temp = new ArrayList<>();
         List<String> ls_lief = new ArrayList<>();
 
-        for(Artikel a : ls_temp){
 
-            for(Artikel as : ls){
+        Map<String, Integer> vergl = new HashMap<>();
 
-                if(a.getArtnr() == as.getArtnr()){
-                    anz ++;
-                    ls_temp.remove(as);
+
+        for(Artikel a : ls){
+
+                if(!vergl.containsKey(a.getArtbez())) {
+                    vergl.put(a.getArtbez(), 1);
+                    ls_temp.add(a);
+                }else{
+                    int anzahl = vergl.get(a.getArtbez());
+                    anzahl ++;
+                    vergl.put(a.getArtbez(),anzahl);
                 }
-            }
 
-            ls_lief.add("BestPos(" + a.getArtnr() + ",'" + a.getArtbez() + "','"+ a.getMge()+"',"+a.getPreis()+",'"+a.getKuehl()+"','"+a.getEdat()+"',"+ anz+")");
 
+            //ls_lief.add("BestPos(" + a.getArtnr() + ",'" + a.getArtbez() + "','"+ a.getMge()+"',"+a.getPreis()+",'"+a.getKuehl()+"','"+a.getEdat()+"',"+ anz+")");
+        }
+
+        String datum;
+        String[] aendern;
+        for(Artikel a : ls_temp){
+            aendern = a.getEdat().split(" ");
+            aendern = aendern[0].split("-");
+            datum = aendern[2] + "-" + aendern[1] + "-" + aendern[0];
+            ls_lief.add("BestPos(" + a.getArtnr() + ",'" + a.getArtbez() + "','"+ a.getMge()+"',"+a.getPreis()+",'"+a.getKuehl()+"','"+datum+"',"+ vergl.get(a.getArtbez()) +")");
         }
 
         String BestPos = "";
 
+        boolean anfang = true;
         for(String s:ls_lief){
-            BestPos += s +",";
+            if(!anfang){
+                BestPos += ",";
+            }
+            BestPos += s;
+            anfang = false;
         }
 
 
@@ -197,7 +218,7 @@ VALUES ('Toast', 'kg', '1', 'NK', '7-JAN-2001')*/
 
 
         sql = "INSERT INTO BESTELLUNG2 (KNR,STATUS,RSUM,Lieferposition) VALUES " +
-                "('" + knr + "', '" + status + "', "+ rSUM + ",'" + positionen;
+                "(" + knr + ", '" + status + "', "+ rSUM + ", " + positionen + ")";
 
 
 
