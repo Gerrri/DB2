@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	 <xs:element name="TABLE">
-		<xs:complexType>
-				<xs:sequence>
-					<xs:element name="ARTIKEL"  maxOccurs="unbounded">
-							<xs:complexType>
-								<xs:sequence>
-										<xs:element name="ARTNR" type="xs:int"></xs:element>
-										<xs:element name="ARTBEZ" type="xs:string"></xs:element>
-										<xs:element name="MGE" type="xs:string"></xs:element>
-										<xs:element name="PREIS" type="xs:double"></xs:element>
-										<xs:element name="KUEHL" type="xs:string"></xs:element>
-										<xs:element name="EDAT" type="xs:string"></xs:element>
-								</xs:sequence>
-							</xs:complexType>
-					</xs:element>
-				</xs:sequence>
-				<xs:attribute name="NAME" type="xs:string"></xs:attribute>
-		</xs:complexType>
-	 </xs:element>
-</xs:schema>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	 <xsd:element name="TABLE">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ARTIKEL"  maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+									<xsd:element name="ARTNR" type="xsd:int"></xsd:element>
+									<xsd:element name="ARTBEZ" type="xsd:string"></xsd:element>
+									<xsd:element name="MGE" type="xsd:string"></xsd:element>
+									<xsd:element name="PREIS" type="xsd:double"></xsd:element>
+									<xsd:element name="KUEHL" type="xsd:string"></xsd:element>
+									<xsd:element name="EDAT" type="xsd:string"></xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="NAME" type="xsd:string"></xsd:attribute>
+		</xsd:complexType>
+	 </xsd:element>
+</xsd:schema>

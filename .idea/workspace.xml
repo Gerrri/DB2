@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e94cb453-c0e7-47db-aca8-8fe6615473ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ARTIKEL1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ARTIKEL1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ARTIKEL1.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/ARTIKEL1.xsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_XSD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_XSD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,19 +22,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DB2/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="65" column="53" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_XSD.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-252">
-              <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+            <state relative-caret-position="782">
+              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2327#2436#1" />
               </folding>
             </state>
           </provider>
@@ -209,7 +197,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897383" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.8155556" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29666665" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.34444445" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -366,8 +354,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_XSD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+        <state relative-caret-position="374">
+          <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -376,8 +364,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DB2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="65" column="53" selection-start-line="65" selection-start-column="53" selection-end-line="65" selection-end-column="53" />
+        <state relative-caret-position="782">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="e#2327#2436#1" />
+          </folding>
         </state>
       </provider>
     </entry>
