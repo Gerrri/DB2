@@ -1,0 +1,24 @@
+CREATE TYPE BestPos AS OBJECT (
+    artnr Integer,
+    artbez VARCHAR2(20), 
+    mge varchar2(20), 
+    preis decimal(10,2),
+    kuehl VARCHAR2(20), 
+    edat Date ,
+    anzahl Integer
+    )
+	
+	
+CREATE TYPE Positionen AS TABLE OF BestPos
+
+
+CREATE TABLE BESTELLUNG2(
+    BSTNR Integer,
+    KNR Integer,
+    STATUS Varchar2(20),
+    RSUM decimal (10,2),
+    lieferposition Positionen
+    ) NESTED TABLE lieferposition STORE AS pos_tab
+	
+	
+INSERT INTO BESTELLUNG2 (KNR,STATUS,RSUM,Lieferposition) VALUES (2,'3',4, Positionen(BestPos(1,'2','3',4,'5','17-05-2019',7)));
