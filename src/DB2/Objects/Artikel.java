@@ -13,6 +13,9 @@ public class Artikel {
 
 
 
+
+
+
     public int getArtnr() {
         return artnr;
     }

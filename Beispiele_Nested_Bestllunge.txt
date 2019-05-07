@@ -22,3 +22,17 @@ CREATE TABLE BESTELLUNG2(
 	
 	
 INSERT INTO BESTELLUNG2 (KNR,STATUS,RSUM,Lieferposition) VALUES (2,'3',4, Positionen(BestPos(1,'2','3',4,'5','17-05-2019',7)));
+
+
+
+
+Löffek     <-a
+DEO
+Toast
+Löffek
+Hamburger
+DEO
+Toast
+Löffek
+Hamburger
+Löffek

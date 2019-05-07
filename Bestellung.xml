@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE TABLE SYSTEM "Bestellung.dtd">
+
+<TABLE NAME="BESTELLUNG2">
+
+    <BESTELLUNG>
+
+            <KNR DT="number">3</KNR>
+            <STATUS DT="varchar(50)">1</STATUS>
+			<ARTIKEL>
+				<ARTNR DT="number">1</ARTNR>
+				<ARTNR DT="number">2</ARTNR>
+			</ARTIKEL>
+			
+			
+			
+           
+	</BESTELLUNG>
+	
+	
+</TABLE>

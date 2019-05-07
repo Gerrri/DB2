@@ -7,7 +7,7 @@ public class Bestellung {
 
     private int bstNR;
     private int kNR;
-    private String status;
+    private int status;
     private double rSUM = 0;
     private int mge;
     private List<Artikel> artList = new ArrayList<>();
@@ -29,11 +29,11 @@ public class Bestellung {
         this.kNR = kNR;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         status = status;
     }
 
@@ -60,7 +60,7 @@ public class Bestellung {
 
     public void addArt(List<Artikel> artikelLst){
         for(Artikel artikel:artikelLst){
-            artList.add(artikel);
+            addArt(artikel);
         }
     }
 
@@ -72,4 +72,34 @@ public class Bestellung {
         }
         return false;
     }
+
+    public boolean validate(){
+
+        // alle not null Prüfen
+        if(bstNR <= 0|| kNR <= 0|| status == 0 || rSUM < 0 || mge == 0 || artList.size() < 1){
+            return false;
+        }
+
+        // VALIDATE KUEHL = TK || KS || NK
+        if (!(status > 0 && status <=5)){
+            return false;
+        }
+
+        //VALIDATE PREIS decimal(7,2)
+        double temp_d = rSUM*100;
+        int temp_i;
+
+        // Nachkommastellen Check (max 2)
+        if(temp_d % 1 != 0){
+            return false;
+        }else{
+            //checke stellen <= 7 vor ","
+            if(!((int)temp_d < 1000000000)){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
 }

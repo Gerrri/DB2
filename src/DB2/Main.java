@@ -21,6 +21,7 @@ public class Main {
             System.out.println("Bitte geben Sie '1' ein, wenn Sie Artikel hinzufuegen wollen. [DTD]");
             System.out.println("Bitte geben Sie '2' ein, wenn Sie Kunden updaten wollen.");
             System.out.println("Bitte geben Sie '3' ein, wenn Sie Artikel hinzufuegen wollen. [XSD]");
+            System.out.println("Bitte geben Sie '4' ein, wenn Sie Bestellungen hinzufuegen wollen. [DTD]");
             auswahl = Integer.parseInt(br1.readLine());
             if(auswahl == 2){
                 System.out.println("Waehlen Sie bitte, ob Sie das Update zuruecksetzen wollen, oder ob Sie es ausführen wollen!");
@@ -36,7 +37,7 @@ public class Main {
                     auswahl = 3;
                 }
             }
-        }while(!(auswahl == 1 || auswahl == 2 || auswahl == 3));
+        }while(!(auswahl == 1 || auswahl == 2 || auswahl == 3 || auswahl == 4));
 
 
         ContentHandlerVALArtikel ac_handler;
@@ -64,6 +65,13 @@ public class Main {
                 ac_handler = new ContentHandlerVALArtikel();
                 ae_handler = new MyErrorHandlerE();
                 saxParserE_xsd.parseXmlFile("artikel1.xml",ac_handler,ae_handler,true);
+                break;
+
+            case 4:
+                // test Bestellung insert DTD
+                ContentHandlerVALBestellung bc_handler = new ContentHandlerVALBestellung();
+                MyErrorHandlerE be_handler = new MyErrorHandlerE();
+                saxParserE_dtd.parseXmlFile("bestellung.xml",bc_handler,be_handler,true);
                 break;
 
         }
