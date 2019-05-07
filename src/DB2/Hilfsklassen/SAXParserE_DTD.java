@@ -15,22 +15,7 @@ import org.xml.sax.*;
  * @author Lammertz,Asbach
  */
 public class SAXParserE_DTD {
-    /*
-    public static void main(String[] args) {
-        String filename = args[0], info;
-        boolean a = true;
-        if (args[1].compareTo("true") == 0) {
-            info = "Validitaet";
-        } else {
-            a = false;
-            info = "Wohlgeformtheit nur";
-        }
-        System.out.println("SAXParserE_DTD: Jetzt wird der File " + filename + " auf " + info + " geparst.");
-        ContentHandlerVALArtikel handler = new ContentHandlerVALArtikel();
-        MyErrorHandlerE ehandler = new MyErrorHandlerE();
-        parseXmlFile(filename, handler, ehandler, a);
-    }
-    */
+
 
     public void parseXmlFile(String filename, MyContentHandlerVAL handler, MyErrorHandlerE ehandler, boolean val) {
         try {

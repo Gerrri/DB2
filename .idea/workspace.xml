@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e94cb453-c0e7-47db-aca8-8fe6615473ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerVALBestellung.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ARTIKEL1.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/ARTIKEL1.xsd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Beispiele_Nested_Bestllunge.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Beispiele_Nested_Bestllunge.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bestellung.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/Bestellung.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/DB2/Hilfsklassen/SAXParserE_DTD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DB2/DB2/Hilfsklassen/SAXParserE_DTD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DB2/DB2/Hilfsklassen/SAXParserE_XSD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DB2/DB2/Hilfsklassen/SAXParserE_XSD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_DTD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_DTD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_XSD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_XSD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DB2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB2/Objects/Artikel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/Objects/Artikel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB2/Objects/Bestellung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/Objects/Bestellung.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DB2/SQL/SQLHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DB2/SQL/SQLHandler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,20 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DB2/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DB2/SQL/SQLHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="550">
+              <caret line="78" column="1" lean-forward="true" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -50,10 +38,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DB2/Objects/Bestellung.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="62" column="28" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
+            <state relative-caret-position="284">
+              <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
               <folding>
-                <element signature="method#delArt#0;class#Bestellung#0" />
                 <element signature="method#validateArtikel#0;class#Bestellung#0" />
               </folding>
             </state>
@@ -63,13 +50,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerVALKunde.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="191">
+              <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#updateKundeAusgabe#0;class#ContentHandlerVALKunde#0" />
                 <element signature="method#characters#0;class#ContentHandlerVALKunde#0" />
-                <element signature="method#endElement#0;class#ContentHandlerVALKunde#0" />
                 <element signature="method#skippedEntity#0;class#ContentHandlerVALKunde#0" />
                 <element signature="method#processingInstruction#0;class#ContentHandlerVALKunde#0" />
                 <element signature="method#ignorableWhitespace#0;class#ContentHandlerVALKunde#0" />
@@ -81,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerVALBestellung.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="112" column="37" lean-forward="true" selection-start-line="112" selection-start-column="37" selection-end-line="112" selection-end-column="37" />
+            <state relative-caret-position="191">
+              <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#startElement#0;class#ContentHandlerVALBestellung#0" />
@@ -97,8 +83,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_DTD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="54" column="57" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
+            <state relative-caret-position="301">
+              <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_XSD.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="563">
+              <caret line="55" column="65" lean-forward="true" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,12 +105,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_XSD.java">
+        <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/MyContentHandlerVAL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="39" column="46" lean-forward="true" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="46" />
+            <state relative-caret-position="68">
+              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#192#193#0" expanded="true" />
+                <element signature="e#222#223#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,8 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerVALArtikel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="111" column="13" lean-forward="true" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
+            <state relative-caret-position="454">
+              <caret line="98" column="61" lean-forward="true" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#483#484#0" expanded="true" />
@@ -159,6 +158,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>parser</find>
+      <find>split</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -189,21 +189,22 @@
         <option value="$PROJECT_DIR$/src/DB2/Hilfsklassen/MyContentHandlerVAL.java" />
         <option value="$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerVALKunde.java" />
         <option value="$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE.java" />
-        <option value="$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_DTD.java" />
-        <option value="$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_XSD.java" />
         <option value="$PROJECT_DIR$/src/DB2/Objects/Artikel.java" />
         <option value="$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerVALArtikel.java" />
         <option value="$PROJECT_DIR$/src/DB2/Objects/Bestellung.java" />
         <option value="$PROJECT_DIR$/src/DB2/SQL/SQLHandler.java" />
         <option value="$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerVALBestellung.java" />
+        <option value="$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_DTD.java" />
+        <option value="$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_XSD.java" />
         <option value="$PROJECT_DIR$/src/DB2/Main.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="1297" />
-    <option name="height" value="1398" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="291" />
+    <option name="y" value="-22" />
+    <option name="width" value="1220" />
+    <option name="height" value="835" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -268,7 +269,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557237785903" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557239404369" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -328,7 +329,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897383" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27867204" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.34444445" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.34406438" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.329429" />
@@ -385,9 +386,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_DTD.java</url>
-          <line>53</line>
+          <line>38</line>
           <properties />
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_XSD.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerVALBestellung.java</url>
@@ -444,17 +451,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/MyContentHandlerVAL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding>
-            <element signature="e#192#193#0" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/MyErrorHandlerE.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -465,37 +461,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB2/Objects/Bestellung.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="62" column="28" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
-          <folding>
-            <element signature="method#delArt#0;class#Bestellung#0" />
-            <element signature="method#validateArtikel#0;class#Bestellung#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DB2/SQL/SQLHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
           <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerVALArtikel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="111" column="13" lean-forward="true" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="method#startElement#0;class#ContentHandlerVALArtikel#0" />
-            <element signature="method#characters#0;class#ContentHandlerVALArtikel#0" />
           </folding>
         </state>
       </provider>
@@ -511,15 +482,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/MyContentHandlerVAL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding>
+            <element signature="e#192#193#0" expanded="true" />
+            <element signature="e#222#223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerVALKunde.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="191">
+          <caret line="139" column="21" selection-start-line="139" selection-start-column="21" selection-end-line="139" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#updateKundeAusgabe#0;class#ContentHandlerVALKunde#0" />
             <element signature="method#characters#0;class#ContentHandlerVALKunde#0" />
-            <element signature="method#endElement#0;class#ContentHandlerVALKunde#0" />
             <element signature="method#skippedEntity#0;class#ContentHandlerVALKunde#0" />
             <element signature="method#processingInstruction#0;class#ContentHandlerVALKunde#0" />
             <element signature="method#ignorableWhitespace#0;class#ContentHandlerVALKunde#0" />
@@ -530,20 +511,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_XSD.java">
+    <entry file="file://$PROJECT_DIR$/src/DB2/Objects/Bestellung.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="39" column="46" lean-forward="true" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="46" />
+        <state relative-caret-position="284">
+          <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+          <folding>
+            <element signature="method#validateArtikel#0;class#Bestellung#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbZ1/ISAMvw.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="98" column="52" lean-forward="true" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerVALArtikel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="98" column="61" lean-forward="true" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#540#541#0" expanded="true" />
+            <element signature="method#startElement#0;class#ContentHandlerVALArtikel#0" />
+            <element signature="method#characters#0;class#ContentHandlerVALArtikel#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerVALBestellung.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#startElement#0;class#ContentHandlerVALBestellung#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_DTD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="54" column="57" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
+        <state relative-caret-position="301">
+          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -552,18 +565,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DB2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+        <state relative-caret-position="550">
+          <caret line="78" column="1" lean-forward="true" selection-start-line="78" selection-start-column="1" selection-end-line="78" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/ContentHandlerVALBestellung.java">
+    <entry file="file://$PROJECT_DIR$/src/DB2/Hilfsklassen/SAXParserE_XSD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="112" column="37" lean-forward="true" selection-start-line="112" selection-start-column="37" selection-end-line="112" selection-end-column="37" />
+        <state relative-caret-position="563">
+          <caret line="55" column="65" lean-forward="true" selection-start-line="55" selection-start-column="65" selection-end-line="55" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#startElement#0;class#ContentHandlerVALBestellung#0" />
           </folding>
         </state>
       </provider>

@@ -3,9 +3,9 @@
     <BESTELLUNG>
 		<KNR DT="number">3</KNR>
 		<STATUS DT="varchar(50)">1</STATUS>
-		<ARTIKEL>
-			<ARTNR DT="number">1</ARTNR>
-			<ARTNR DT="number">2</ARTNR>
-		</ARTIKEL>           
+		
+		<ARTNR DT="number">1</ARTNR>
+		<ARTNR DT="number">2</ARTNR>
+		          
 	</BESTELLUNG>	
 </TABLE>

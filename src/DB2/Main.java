@@ -71,7 +71,7 @@ public class Main {
                 // test Bestellung insert DTD
                 ContentHandlerVALBestellung bc_handler = new ContentHandlerVALBestellung();
                 MyErrorHandlerE be_handler = new MyErrorHandlerE();
-                saxParserE_dtd.parseXmlFile("bestellung.xml",bc_handler,be_handler,true);
+                saxParserE_xsd.parseXmlFile("bestellung.xml",bc_handler,be_handler,true);
                 break;
 
         }
