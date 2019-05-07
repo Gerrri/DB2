@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	 <xs:element name="TABLE">
+		<xs:attribute name="NAME" type="xs:string"></xs:attribute>
+		   <xs:complexType>
+				 <xs:sequence>
+					   <xs:element name="BESTELLUNG">
+							 <xs:complexType>
+								   <xs:sequence>
+										 <xs:element name="KNR" type="xs:int"></xs:element>
+										 <xs:element name="STATUS" type="xs:string"></xs:element>
+										 <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="ARTNR" type="xs:int"></xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+								   </xs:sequence>
+							 </xs:complexType>
+					   </xs:element>
+				 </xs:sequence>
+		   </xs:complexType>
+	 </xs:element>
+</xs:schema>
