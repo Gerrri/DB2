@@ -68,7 +68,7 @@ public class Main {
                 break;
 
             case 4:
-                // test Bestellung insert DTD
+                // test Bestellung insert XSD
                 ContentHandlerVALBestellung bc_handler = new ContentHandlerVALBestellung();
                 MyErrorHandlerE be_handler = new MyErrorHandlerE();
                 saxParserE_xsd.parseXmlFile("bestellung.xml",bc_handler,be_handler,true);
