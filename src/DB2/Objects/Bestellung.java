@@ -102,4 +102,24 @@ public class Bestellung {
         return true;
     }
 
+    public void print_Bestellung(){
+        System.out.println("Bestellnummer: "+ bstNR);
+        System.out.println("Kundennummer : "+ kNR);
+        System.out.println("Status       : "+ status);
+        System.out.println("rSUM         : "+ rSUM);
+        System.out.println("mge          : "+ mge);
+        System.out.println("------------- Alle Artikel -------------");
+        int nr=1;
+        for(Artikel a: artList) {
+            System.out.println("    Artikel Nr   : "+ nr);
+            System.out.println("    Artikelnummer: "+ a.getArtnr());
+            System.out.println("    Artikelbez   : "+ a.getArtbez());
+            System.out.println("    menge        : "+ a.getMge());
+            System.out.println("    preis        : "+ a.getPreis());
+            System.out.println("    Kühl         : "+ a.getKuehl());
+            System.out.println("    edat         : "+ a.getEdat());
+        }
+        System.out.println("------------- Alle Artikel -------------");
+    }
+
 }

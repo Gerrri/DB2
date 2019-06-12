@@ -7,7 +7,7 @@
         <MGE>stk</MGE>
         <PREIS>1.29</PREIS>
         <KUEHL>NK</KUEHL>
-        <EDAT>17-12-2002</EDAT>
+        <EDAT>2017-12-02</EDAT>
     </ARTIKEL>
 
     <ARTIKEL>
@@ -16,6 +16,6 @@
         <MGE>kg</MGE>
         <PREIS>3.99</PREIS>
         <KUEHL>NK</KUEHL>
-        <EDAT>17-01-2001</EDAT>
+        <EDAT>2001-01-01</EDAT>
     </ARTIKEL>
 </TABLE>

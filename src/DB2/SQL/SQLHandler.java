@@ -4,10 +4,8 @@ import DB2.Objects.Artikel;
 import DB2.Objects.Bestellung;
 import DB2.Objects.Kunde;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.math.BigDecimal;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -43,11 +41,16 @@ public class SQLHandler {
         boolean erg = false;
 
         /* Beispiel insert: INSERT INTO ARTIKEL (ARTBEZ, MGE, PREIS, KUEHL, EDAT)
-VALUES ('Toast', 'kg', '1', 'NK', '7-JAN-2001')*/
+        VALUES ('Toast', 'kg', '1', 'NK', '7-JAN-2001')*/
 
+        String datum;
+        String[] aendern;
+        aendern = edat.split(" ");
+        aendern = aendern[0].split("-");
+        datum = aendern[2] + "-" + aendern[1] + "-" + aendern[0];
 
         sql = "INSERT INTO ARTIKEL (ARTBEZ, MGE, PREIS, KUEHL, EDAT) VALUES " +
-        "('" + artbez + "', '" + mge + "', "+ preis + ",'" + kuehl + "','" +edat + "')" ;
+        "('" + artbez + "', '" + mge + "', "+ preis + ",'" + kuehl + "','" +datum + "')" ;
 
 
 
@@ -232,6 +235,48 @@ VALUES ('Toast', 'kg', '1', 'NK', '7-JAN-2001')*/
         }
         return erg;
 
+    }
+
+    public void selectBestellung(int start, int end){
+        List<Bestellung> a = new ArrayList<>();
+        sql = "SELECT * FROM BESTELLUNG2 WHERE BSTNR>=" + start + " AND BSTNR<=" + end;
+
+        try {
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(sql);
+
+            while(rs.next()){
+                Bestellung temp = new Bestellung();
+                temp.setkNR(Integer.parseInt(rs.getNString("kNR")));
+                temp.setStatus(Integer.parseInt(rs.getNString("Status")));
+                temp.setBstNR(Integer.parseInt(rs.getNString("BSTNR")));
+                Array array = rs.getArray("LIEFERPOSITION");
+                Object[] address_list = (Object[]) array.getArray();
+                for (int i = 0; i < address_list.length; i++) {
+                    Struct address = (Struct) address_list[i];
+                    Object[] attrib = address.getAttributes();
+                    Artikel artikel = new Artikel();
+                    BigDecimal cast = (BigDecimal) attrib[0];
+                    artikel.setArtnr(cast.intValue());
+                    artikel.setArtbez((String) attrib[1]);
+                    artikel.setMge((String) attrib[2]);
+                    cast = (BigDecimal) attrib[3];
+                    artikel.setPreis(cast.doubleValue());
+                    Timestamp time = (Timestamp) attrib[5];
+                    artikel.setKuehl((String) attrib[4]);
+                    artikel.setEdat(time.toString());
+                    temp.addArt(artikel);
+                }
+                a.add(temp);
+            }
+            for(Bestellung bestellung : a){
+                bestellung.print_Bestellung();
+            }
+
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 

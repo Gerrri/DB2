@@ -1,6 +1,7 @@
 package DB2;
 
 import DB2.Hilfsklassen.*;
+import DB2.SQL.SQLHandler;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -37,7 +38,7 @@ public class Main {
                     auswahl = 3;
                 }
             }
-        }while(!(auswahl == 1 || auswahl == 2 || auswahl == 3 || auswahl == 4));
+        }while(!(auswahl == 1 || auswahl == 2 || auswahl == 3 || auswahl == 4 || auswahl == 5));
 
 
         ContentHandlerVALArtikel ac_handler;
@@ -64,7 +65,7 @@ public class Main {
                 // test Artikel insert XSD
                 ac_handler = new ContentHandlerVALArtikel();
                 ae_handler = new MyErrorHandlerE();
-                saxParserE_xsd.parseXmlFile("artikel1.xml",ac_handler,ae_handler,true);
+                saxParserE_xsd.parseXmlFile("ARTIKEL1.xml",ac_handler,ae_handler,true);
                 break;
 
             case 4:
@@ -73,6 +74,10 @@ public class Main {
                 MyErrorHandlerE be_handler = new MyErrorHandlerE();
                 saxParserE_xsd.parseXmlFile("bestellung.xml",bc_handler,be_handler,true);
                 break;
+
+            case 5:
+                SQLHandler handler = SQLHandler.getSQLHandler();
+                handler.selectBestellung(1,10);
 
         }
     }
