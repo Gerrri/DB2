@@ -119,13 +119,26 @@ public class SQLHandler {
             rs = stmt.executeQuery(sql);
 
             rs.next();
+            String s;
+            double d;
+            String[] arr = new String[2];
+
 
             while(rs.next()){
                 a = new Artikel();
                 a.setArtnr(Integer.parseInt(rs.getNString("ARTNR")));
                 a.setArtbez(rs.getNString("ARTBEZ"));
                 a.setMge(rs.getNString("MGE"));
-                a.setPreis(Double.parseDouble(rs.getNString("PREIS")));
+
+                s = rs.getNString("PREIS");
+
+                arr = s.split(",");
+
+
+                d = Double.parseDouble(arr[0])+Double.parseDouble(arr[1])/100;
+
+
+                a.setPreis(d);
                 a.setKuehl(rs.getNString("KUEHL"));
                 a.setEdat(rs.getNString("EDAT"));
 

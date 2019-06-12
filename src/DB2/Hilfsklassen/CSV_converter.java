@@ -29,12 +29,19 @@ public class CSV_converter {
             FileWriter csvWriter = new FileWriter("Artikel.csv");
 
             for(Artikel a:al){
-                csvWriter.append((char) a.getArtnr());
+                csvWriter.append(Double.toString(a.getArtnr()));
+                csvWriter.append(";");
                 csvWriter.append(a.getArtbez());
+                csvWriter.append(";");
                 csvWriter.append(a.getMge());
-
+                csvWriter.append(";");
+                csvWriter.append(Double.toString(a.getPreis()));
+                csvWriter.append(";");
+                csvWriter.append(a.getKuehl());
+                csvWriter.append(";");
+                csvWriter.append(a.getEdat().split(" ")[0]);
+                csvWriter.append("\n");
             }
-
 
             csvWriter.flush();
             csvWriter.close();
@@ -42,10 +49,6 @@ public class CSV_converter {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
-
     }
 
 }
