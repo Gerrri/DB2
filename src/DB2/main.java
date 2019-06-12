@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main {
+public class main {
 
     public static void main(String[] args) throws IOException {
         SAXParserE_DTD saxParserE_dtd = new SAXParserE_DTD();
@@ -23,6 +23,7 @@ public class Main {
             System.out.println("Bitte geben Sie '2' ein, wenn Sie Kunden updaten wollen.");
             System.out.println("Bitte geben Sie '3' ein, wenn Sie Artikel hinzufuegen wollen. [XSD]");
             System.out.println("Bitte geben Sie '4' ein, wenn Sie Bestellungen hinzufuegen wollen. [DTD]");
+            System.out.println("Bitte geben Sie '6' ein, wenn Sie eine CSV aus Artikeln erstellen wollen");
             auswahl = Integer.parseInt(br1.readLine());
             if(auswahl == 2){
                 System.out.println("Waehlen Sie bitte, ob Sie das Update zuruecksetzen wollen, oder ob Sie es ausführen wollen!");
@@ -38,7 +39,7 @@ public class Main {
                     auswahl = 3;
                 }
             }
-        }while(!(auswahl == 1 || auswahl == 2 || auswahl == 3 || auswahl == 4 || auswahl == 5));
+        }while(!(auswahl == 1 || auswahl == 2 || auswahl == 3 || auswahl == 4 || auswahl == 5 || auswahl == 6));
 
 
         ContentHandlerVALArtikel ac_handler;
@@ -78,6 +79,11 @@ public class Main {
             case 5:
                 SQLHandler handler = SQLHandler.getSQLHandler();
                 handler.selectBestellung(1,10);
+                break;
+
+            case 6:
+                CSV_converter.getInstance().artikelliste_to_CSV(SQLHandler.getSQLHandler().select_alle_Artikel());
+                break;
 
         }
     }

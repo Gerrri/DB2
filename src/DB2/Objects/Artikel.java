@@ -2,6 +2,7 @@ package DB2.Objects;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 public class Artikel {
     private int artnr;

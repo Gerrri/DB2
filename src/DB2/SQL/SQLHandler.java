@@ -105,9 +105,38 @@ public class SQLHandler {
             System.out.println(e.getMessage());
         }
 
-
-
         return a;
+    }
+
+    public List<Artikel> select_alle_Artikel(){
+
+        List<Artikel> al = new ArrayList<Artikel>();
+        Artikel a = null;
+        sql = "SELECT * FROM ARTIKEL";
+
+        try {
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(sql);
+
+            rs.next();
+
+            while(rs.next()){
+                a = new Artikel();
+                a.setArtnr(Integer.parseInt(rs.getNString("ARTNR")));
+                a.setArtbez(rs.getNString("ARTBEZ"));
+                a.setMge(rs.getNString("MGE"));
+                a.setPreis(Double.parseDouble(rs.getNString("PREIS")));
+                a.setKuehl(rs.getNString("KUEHL"));
+                a.setEdat(rs.getNString("EDAT"));
+
+                al.add(a);
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return al;
     }
 
     public Kunde select_Kunde_by_KNR(int KNR){
@@ -158,7 +187,6 @@ public class SQLHandler {
         return erg;
 
     }
-
 
     public boolean insert_bestellung(Bestellung b){
         boolean erg = false;
