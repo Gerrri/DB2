@@ -24,6 +24,7 @@ public class main {
             System.out.println("Bitte geben Sie '3' ein, wenn Sie Artikel hinzufuegen wollen. [XSD]");
             System.out.println("Bitte geben Sie '4' ein, wenn Sie Bestellungen hinzufuegen wollen. [DTD]");
             System.out.println("Bitte geben Sie '6' ein, wenn Sie eine CSV aus Artikeln erstellen wollen");
+            System.out.println("Bitte geben Sie '7' ein, um die ausgelesene CSV in die CouchDB einzulesen.");
             auswahl = Integer.parseInt(br1.readLine());
             if(auswahl == 2){
                 System.out.println("Waehlen Sie bitte, ob Sie das Update zuruecksetzen wollen, oder ob Sie es ausführen wollen!");
@@ -39,7 +40,7 @@ public class main {
                     auswahl = 3;
                 }
             }
-        }while(!(auswahl == 1 || auswahl == 2 || auswahl == 3 || auswahl == 4 || auswahl == 5 || auswahl == 6));
+        }while(!(auswahl == 1 || auswahl == 2 || auswahl == 3 || auswahl == 4 || auswahl == 5 || auswahl == 6 || auswahl == 7));
 
 
         ContentHandlerVALArtikel ac_handler;
@@ -84,6 +85,8 @@ public class main {
             case 6:
                 CSV_converter.getInstance().artikelliste_to_CSV(SQLHandler.getSQLHandler().select_alle_Artikel());
                 break;
+
+            case 7:
 
         }
     }

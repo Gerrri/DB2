@@ -1,5 +1,10 @@
 package DB2.Objects;
 
+import DB2.Objects.BPos;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class CouchArtikel {
     private String id;
     private String revision;
@@ -7,8 +12,22 @@ public class CouchArtikel {
     private String artbez;
     private String mge;
     private double preis;
-    private String kuehl;
-    private String edat;
+
+    private List<BPos> bPos;
+
+    public CouchArtikel() {
+        this.artbez = "";
+        this.mge = "";
+        bPos = new ArrayList<BPos>();
+    }
+
+    public CouchArtikel(int artnr, String artbez, String mge, double preis) {
+        this.artnr = artnr;
+        this.artbez = artbez;
+        this.mge = mge;
+        this.preis = preis;
+    }
+
 
     public String getId() {
         return id;
@@ -58,19 +77,11 @@ public class CouchArtikel {
         this.preis = preis;
     }
 
-    public String getKuehl() {
-        return kuehl;
+    public List<BPos> getbPos() {
+        return bPos;
     }
 
-    public void setKuehl(String kuehl) {
-        this.kuehl = kuehl;
-    }
-
-    public String getEdat() {
-        return edat;
-    }
-
-    public void setEdat(String edat) {
-        this.edat = edat;
+    public void setbPos(List<BPos> bPos) {
+        this.bPos = bPos;
     }
 }

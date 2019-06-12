@@ -23,21 +23,24 @@ public class CSV_converter {
         return instance;
     }
 
+    public void artikelCSV_to_CouchDB(){
+        //CRUD verwenden
+    }
+
+
     public void artikelliste_to_CSV(List<Artikel> al){
 
         try {
             FileWriter csvWriter = new FileWriter("Artikel.csv");
 
             for(Artikel a:al){
-                csvWriter.append(Double.toString(a.getArtnr()));
+                csvWriter.append(Integer.toString(a.getArtnr()));
                 csvWriter.append(";");
                 csvWriter.append(a.getArtbez());
                 csvWriter.append(";");
                 csvWriter.append(a.getMge());
                 csvWriter.append(";");
                 csvWriter.append(Double.toString(a.getPreis()));
-                csvWriter.append(";");
-                csvWriter.append(a.getKuehl());
                 csvWriter.append(";");
                 csvWriter.append(a.getEdat().split(" ")[0]);
                 csvWriter.append("\n");
