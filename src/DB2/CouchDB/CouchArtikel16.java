@@ -3,6 +3,7 @@ package DB2.CouchDB;
 import DB2.SQL.SQLHandler;
 import org.ektorp.CouchDbConnector;
 import org.ektorp.CouchDbInstance;
+import org.ektorp.DocumentNotFoundException;
 import org.ektorp.http.HttpClient;
 import org.ektorp.http.StdHttpClient;
 import org.ektorp.impl.StdCouchDbInstance;
@@ -60,7 +61,7 @@ public class CouchArtikel16 {
             switch (choice) {
                 case 1: c1(repo);break;
                 case 2: c2(repo);break;
-                //case 3: c3();break;
+                case 3: c3(repo);break;
                 //case 4: c4();break;
                 //case 5: c5();break;
 
@@ -117,6 +118,33 @@ public class CouchArtikel16 {
 
             System.out.println("");
         }
+    }
+
+    private void c3(CouchDBRepo repo){
+        String format = "%-5s%-15s%-15s%-5s%n";
+        try {
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("ID Eingeben: ");
+            String id;
+            do {
+                id = reader.readLine();
+            } while (id.equals(""));
+
+            Artikel artikel = repo.get(id);
+
+
+            System.out.printf(format, artikel.getArtnr(), artikel.getArtbez(), artikel.getMge(),
+                    artikel.getPreis());
+            for (BPos pos : artikel.getBPos()) {
+                System.out.printf(format, "", pos.getBestnr(), pos.getMenge(), "");
+            }
+        } catch (DocumentNotFoundException e) {
+            System.out.println("kein Dokument mit dieser ID!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 
