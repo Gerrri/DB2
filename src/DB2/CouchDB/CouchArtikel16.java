@@ -6,6 +6,7 @@ import org.ektorp.CouchDbInstance;
 import org.ektorp.DocumentNotFoundException;
 import org.ektorp.http.HttpClient;
 import org.ektorp.http.StdHttpClient;
+import org.ektorp.impl.StdCouchDbConnector;
 import org.ektorp.impl.StdCouchDbInstance;
 
 import java.io.BufferedReader;
@@ -30,8 +31,8 @@ public class CouchArtikel16 {
         }
         CouchDbInstance dbInstance = new StdCouchDbInstance(httpClient);
         // if the second parameter is true, the database will be created if it doesn't exists
-        CouchDbConnector db = dbInstance.createConnector("artikel16", true);
-        //CouchDbConnector db = new StdCouchDbConnector("artikel16", dbInstance);
+        //CouchDbConnector db = dbInstance.createConnector("artikel16", true);
+        CouchDbConnector db = new StdCouchDbConnector("artikel16", dbInstance);
         //db.createDatabaseIfNotExists();
 
         CouchDBRepo repo = new CouchDBRepo(db);
@@ -62,8 +63,8 @@ public class CouchArtikel16 {
                 case 1: c1(repo);break;
                 case 2: c2(repo);break;
                 case 3: c3(repo);break;
-                //case 4: c4();break;
-                //case 5: c5();break;
+                case 4: c4(repo);break;
+                case 5: c5(repo);break;
 
                 case 0:
                     System.out.println("Auf Wiedersehen");
@@ -123,16 +124,7 @@ public class CouchArtikel16 {
     private void c3(CouchDBRepo repo){
         String format = "%-5s%-15s%-15s%-5s%n";
         try {
-
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("ID Eingeben: ");
-            String id;
-            do {
-                id = reader.readLine();
-            } while (id.equals(""));
-
-            Artikel artikel = repo.get(id);
-
+            Artikel artikel = getArtikel_dialog(repo);
 
             System.out.printf(format, artikel.getArtnr(), artikel.getArtbez(), artikel.getMge(),
                     artikel.getPreis());
@@ -141,10 +133,54 @@ public class CouchArtikel16 {
             }
         } catch (DocumentNotFoundException e) {
             System.out.println("kein Dokument mit dieser ID!");
+        }
+    }
+
+    private void c4(CouchDBRepo repo){
+        System.out.println("Welche Artikelbezeichnung soll geändert werden?");
+        Artikel artikel = getArtikel_dialog(repo);
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Alte Bezeichnung: "+artikel.getArtbez());
+        System.out.println("Neue Bezeichnung: ");
+
+        String bez = null;
+
+        try {
+            bez = reader.readLine();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+        artikel.setArtbez(bez);
+        repo.update(artikel);
+
+        System.out.println("Artikel Aktualisiert!");
+    }
+
+
+    private void c5(CouchDBRepo repo){
+        System.out.println("Welche Artikelsoll gelöscht werden?");
+        Artikel artikel = getArtikel_dialog(repo);
+
+        repo.remove(artikel);
+
+        System.out.println("Artikel gelöscht!");
+    }
+
+    private Artikel getArtikel_dialog(CouchDBRepo repo){
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("ID Eingeben: ");
+        String id = null;
+        do {
+            try {
+                id = reader.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } while (id.equals(""));
+
+        return repo.get(id);
     }
 
 
