@@ -21,9 +21,9 @@ public class main {
 
         do {
             System.out.println("Wofuer wollen Sie das Programm verwenden?");
-            System.out.println("Bitte geben Sie '1' ein, wenn Sie Artikel hinzufuegen wollen. [DTD]");
+            System.out.println("Bitte geben Sie '1' ein, wenn Sie ArtikelSQL hinzufuegen wollen. [DTD]");
             System.out.println("Bitte geben Sie '2' ein, wenn Sie Kunden updaten wollen.");
-            System.out.println("Bitte geben Sie '3' ein, wenn Sie Artikel hinzufuegen wollen. [XSD]");
+            System.out.println("Bitte geben Sie '3' ein, wenn Sie ArtikelSQL hinzufuegen wollen. [XSD]");
             System.out.println("Bitte geben Sie '4' ein, wenn Sie Bestellungen hinzufuegen wollen. [DTD]");
             System.out.println("Bitte geben Sie '6' ein, wenn Sie CouchDB Funktionen nutzen wollen");
 
@@ -49,7 +49,7 @@ public class main {
         MyErrorHandlerE ae_handler;
         switch (auswahl){
             case 1:
-                // test Artikel insert DTD
+                // test ArtikelSQL insert DTD
                 ac_handler = new ContentHandlerVALArtikel();
                 ae_handler = new MyErrorHandlerE();
                 saxParserE_dtd.parseXmlFile("artikel.xml",ac_handler,ae_handler,true);
@@ -66,7 +66,7 @@ public class main {
                 }
 
             case 3:
-                // test Artikel insert XSD
+                // test ArtikelSQL insert XSD
                 ac_handler = new ContentHandlerVALArtikel();
                 ae_handler = new MyErrorHandlerE();
                 saxParserE_xsd.parseXmlFile("ARTIKEL1.xml",ac_handler,ae_handler,true);

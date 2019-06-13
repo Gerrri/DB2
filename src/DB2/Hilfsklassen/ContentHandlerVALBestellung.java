@@ -1,6 +1,6 @@
 package DB2.Hilfsklassen;
 
-import DB2.Objects.Artikel;
+import DB2.Objects.ArtikelSQL;
 import DB2.Objects.Bestellung;
 import DB2.SQL.SQLHandler;
 import org.xml.sax.Attributes;
@@ -16,7 +16,7 @@ public class ContentHandlerVALBestellung extends MyContentHandlerVAL{
     private SQLHandler sql;
     private String aktwert;
     private Bestellung bestellung;
-    private Artikel artikel;
+    private ArtikelSQL artikel;
 
     @Override
     public void setDocumentLocator(Locator locator) {
@@ -86,15 +86,15 @@ public class ContentHandlerVALBestellung extends MyContentHandlerVAL{
                     bestellung.setStatus(Integer.parseInt(aktwert));
                     break;
 
-                // ab hier Artikel
+                // ab hier ArtikelSQL
                 case "ARTNR":
 
                     artikel = sql.select_Artikel_by_ARTNR(Integer.parseInt(aktwert));
 
-                    //WENN validierung an und Artikel OK hinzufügen
+                    //WENN validierung an und ArtikelSQL OK hinzufügen
                     if (val) {
                         if (artikel.validateArtikel()) {
-                            System.out.println("-I-> Artikel Valide");
+                            System.out.println("-I-> ArtikelSQL Valide");
                             bestellung.addArt(artikel);
                         } else {
                             throw new SAXException();

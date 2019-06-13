@@ -3,10 +3,10 @@ package DB2.CouchDB;
 import org.ektorp.CouchDbConnector;
 import org.ektorp.support.CouchDbRepositorySupport;
 
-public class CouchDBRepo extends CouchDbRepositorySupport<DBArtikel16> {
+public class CouchDBRepo extends CouchDbRepositorySupport<Artikel> {
 
     public CouchDBRepo(CouchDbConnector db) {
-        super(DBArtikel16.class, db);
+        super(Artikel.class, db);
     }
 
 }

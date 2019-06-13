@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-public class Artikel {
+public class ArtikelSQL {
     private int artnr;
     private String artbez;
     private String mge;

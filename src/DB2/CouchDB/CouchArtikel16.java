@@ -5,7 +5,6 @@ import org.ektorp.CouchDbConnector;
 import org.ektorp.CouchDbInstance;
 import org.ektorp.http.HttpClient;
 import org.ektorp.http.StdHttpClient;
-import org.ektorp.impl.StdCouchDbConnector;
 import org.ektorp.impl.StdCouchDbInstance;
 
 import java.io.BufferedReader;
@@ -30,9 +29,9 @@ public class CouchArtikel16 {
         }
         CouchDbInstance dbInstance = new StdCouchDbInstance(httpClient);
         // if the second parameter is true, the database will be created if it doesn't exists
-        // CouchDbConnector db = dbInstance.createConnector("Artikelsammlung", true);
-        CouchDbConnector db = new StdCouchDbConnector("artikel16", dbInstance);
-        db.createDatabaseIfNotExists();
+        CouchDbConnector db = dbInstance.createConnector("artikel16", true);
+        //CouchDbConnector db = new StdCouchDbConnector("artikel16", dbInstance);
+        //db.createDatabaseIfNotExists();
 
         CouchDBRepo repo = new CouchDBRepo(db);
 
@@ -43,8 +42,8 @@ public class CouchArtikel16 {
             System.out.println("=        1. ARTIKEL.csv erstellen (SQL) + einlesen =");
             System.out.println("=        2. Alle Artikel aus CouchDB lesen         =");
             System.out.println("=        3. Artikel nach ID lesen                  =");
-            System.out.println("=        4. Artikel verändern                      =");
-            System.out.println("=        5. Artikel löschen                        =");
+            System.out.println("=        4. Artikel veraendern                     =");
+            System.out.println("=        5. Artikel loeschen                       =");
             System.out.println("=        0. Exit                                   =");
             System.out.println("====================================================");
 
@@ -86,7 +85,7 @@ public class CouchArtikel16 {
         BufferedReader fileReader = new BufferedReader(new FileReader("ARTIKEL.csv"));
         String line;
         while ((line = fileReader.readLine()) != null && !line.equals("")) {
-            DBArtikel16 artikel = new DBArtikel16();
+            Artikel artikel = new Artikel();
             String val[] = line.split(";");
             artikel.setArtnr(Integer.parseInt(val[0]));
             artikel.setArtbez(val[1]);
@@ -94,10 +93,10 @@ public class CouchArtikel16 {
             artikel.setPreis(Double.parseDouble(val[3]));
 
             for (int i = 4; i < val.length; i += 2) {
-                DBBPos bPos = new DBBPos();
+                BPos bPos = new BPos();
                 bPos.setBestnr(Integer.parseInt(val[i]));
                 bPos.setMenge(Integer.parseInt(val[i + 1]));
-                artikel.getbPos().add(bPos);
+                artikel.getBPos().add(bPos);
             }
             repo.add(artikel);
         }
@@ -108,10 +107,11 @@ public class CouchArtikel16 {
 
     private void c2(CouchDBRepo repo){
         String format = "%-5s%-15s%-15s%-5s%n";
-        List<DBArtikel16> artList = repo.getAll();
-        for (DBArtikel16 art : artList) {
+
+        List<Artikel> artList = repo.getAll();
+        for (Artikel art : artList) {
             System.out.printf(format, art.getArtnr(), art.getArtbez(), art.getMge(), art.getPreis());
-            for (DBBPos pos : art.getbPos()) {
+            for (BPos pos : art.getBPos()) {
                 System.out.printf(format, "", pos.getBestnr(), pos.getMenge(), "");
             }
 

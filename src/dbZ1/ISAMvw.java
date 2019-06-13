@@ -118,13 +118,13 @@ public class ISAMvw
 
 			while ((csv = raf.readLine()) != null)
 				{
-					//temporäres ArtikelObjekt anlegen
+					//temporï¿½res ArtikelObjekt anlegen
 					newArt = new ISAMArtikel((Integer.parseInt(csv.split(";")[0])), pos);
 					
-					// offset des nächsten CSVs buffern
+					// offset des nï¿½chsten CSVs buffern
 					pos = raf.getFilePointer();
 					
-					//Artikel in Liste aufnehmen
+					//ArtikelSQL in Liste aufnehmen
 					artikelListe.add(newArt);
 				}
 			
@@ -162,7 +162,7 @@ public class ISAMvw
 
 					if (e.getnr() == artnr)
 						{
-							System.out.println("Es ist ein Fehler aufgetreten. Artikel ist bereits vorhanden");
+							System.out.println("Es ist ein Fehler aufgetreten. ArtikelSQL ist bereits vorhanden");
 							bw.close();
 							raf.close();
 							return;
@@ -180,7 +180,7 @@ public class ISAMvw
 
 			csvTemp = (artnr + ";" + artbez + ";" + mge + ";" + preis + ";" + steu + " ");
 
-			//neuen Artikel-CSV in ARTIKEL.DAT schreiben
+			//neuen ArtikelSQL-CSV in ARTIKEL.DAT schreiben
 			offset = raf.length();
 			bw.write(csvTemp);
 			bw.newLine();
@@ -188,10 +188,10 @@ public class ISAMvw
 
 			raf.close();
 
-			//temporäres ArtikelObjekt anlegen
+			//temporï¿½res ArtikelObjekt anlegen
 
 			ISAMArtikel newArt = new ISAMArtikel((Integer.parseInt(csvTemp.split(";")[0])), offset);
-			//neuen Artikel in die ISAM Liste aufnehmen
+			//neuen ArtikelSQL in die ISAM Liste aufnehmen
 			artikelISAMliste.add(newArt);
 			Collections.sort(artikelISAMliste);
 
@@ -244,14 +244,14 @@ public class ISAMvw
 
 					if (artnr == e.getnr())
 						{
-							System.out.println("Gesuchter Artikel: " + getData(e.getOffset()));
+							System.out.println("Gesuchter ArtikelSQL: " + getData(e.getOffset()));
 
 							System.out.println("\n\n");
 							return;
 						}
 
 				}
-			System.out.println("Artikel nicht vorhanden!");
+			System.out.println("ArtikelSQL nicht vorhanden!");
 
 			System.out.println("\n\n");
 		}

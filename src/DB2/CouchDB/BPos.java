@@ -3,14 +3,14 @@ package DB2.CouchDB;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class DBBPos {
+public class BPos {
     private int bestnr;
     private int menge;
 
-    public DBBPos() {
+    public BPos() {
     }
 
-    public DBBPos(int bestnr, int menge) {
+    public BPos(int bestnr, int menge) {
         this.bestnr = bestnr;
         this.menge = menge;
     }

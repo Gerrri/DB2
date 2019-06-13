@@ -1,7 +1,8 @@
 package DB2.SQL;
 
-import DB2.CouchDB.DBBPos;
-import DB2.Objects.Artikel;
+import DB2.CouchDB.Artikel;
+import DB2.CouchDB.BPos;
+import DB2.Objects.ArtikelSQL;
 import DB2.Objects.Bestellung;
 import DB2.Objects.Kunde;
 
@@ -84,8 +85,8 @@ public class SQLHandler {
 
     }
 
-    public Artikel select_Artikel_by_ARTNR(int ARTNR){
-        Artikel a = null;
+    public ArtikelSQL select_Artikel_by_ARTNR(int ARTNR){
+        ArtikelSQL a = null;
         sql = "SELECT * FROM ARTIKEL WHERE ARTNR="+ARTNR;
 
         try {
@@ -94,7 +95,7 @@ public class SQLHandler {
 
             rs.next();
 
-            a = new Artikel();
+            a = new ArtikelSQL();
             a.setArtnr(Integer.parseInt(rs.getNString("ARTNR")));
             a.setArtbez(rs.getNString("ARTBEZ"));
             a.setMge(rs.getNString("MGE"));
@@ -140,8 +141,6 @@ public class SQLHandler {
 
 
                 a.setPreis(d);
-                a.setKuehl(rs.getNString("KUEHL"));
-                a.setEdat(rs.getNString("EDAT"));
 
                 al.add(a);
             }
@@ -180,9 +179,9 @@ public class SQLHandler {
         return k;
     }
 
-    public List<DBBPos> select_DBPos_by_ARTNR (int ARTNR){
-        List<DBBPos> lb = new ArrayList<>();
-        DBBPos b = null;
+    public List<BPos> select_DBPos_by_ARTNR (int ARTNR){
+        List<BPos> lb = new ArrayList<>();
+        BPos b = null;
         sql = "SELECT * FROM BPOS WHERE ARTNR="+ARTNR;
 
         try {
@@ -197,7 +196,7 @@ public class SQLHandler {
 
             while(rs.next()){
 
-                b = new DBBPos();
+                b = new BPos();
                 b.setBestnr(Integer.parseInt(rs.getNString("BSTNR")));
                 b.setMenge(Integer.parseInt(rs.getNString("MENGE")));
 
@@ -241,22 +240,22 @@ public class SQLHandler {
         int knr = b.getkNR();
         int status = b.getStatus();
         double rSUM = b.getrSUM();
-        List<Artikel> ls = b.getArtList();
+        List<ArtikelSQL> ls = b.getArtList();
 
         //INSERT INTO BESTELLUNG2 (KNR,STATUS,RSUM,Lieferposition) VALUES (2,'3',4, Positionen(BestPos(1,'2','3',4,'5','17-05-2019',7)));
         //BestPos(artnr,'artbez','mge',preis,'kuehl','17-05-2019',anzahl)
 
 
-        Artikel t;
+        ArtikelSQL t;
         int anz=0;
-        List<Artikel> ls_temp = new ArrayList<>();
+        List<ArtikelSQL> ls_temp = new ArrayList<>();
         List<String> ls_lief = new ArrayList<>();
 
 
         Map<String, Integer> vergl = new HashMap<>();
 
 
-        for(Artikel a : ls){
+        for(ArtikelSQL a : ls){
 
                 if(!vergl.containsKey(a.getArtbez())) {
                     vergl.put(a.getArtbez(), 1);
@@ -273,7 +272,7 @@ public class SQLHandler {
 
         String datum;
         String[] aendern;
-        for(Artikel a : ls_temp){
+        for(ArtikelSQL a : ls_temp){
             aendern = a.getEdat().split(" ");
             aendern = aendern[0].split("-");
             datum = aendern[2] + "-" + aendern[1] + "-" + aendern[0];
@@ -330,7 +329,7 @@ public class SQLHandler {
                 for (int i = 0; i < address_list.length; i++) {
                     Struct address = (Struct) address_list[i];
                     Object[] attrib = address.getAttributes();
-                    Artikel artikel = new Artikel();
+                    ArtikelSQL artikel = new ArtikelSQL();
                     BigDecimal cast = (BigDecimal) attrib[0];
                     artikel.setArtnr(cast.intValue());
                     artikel.setArtbez((String) attrib[1]);

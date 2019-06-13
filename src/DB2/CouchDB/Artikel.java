@@ -3,15 +3,13 @@ package DB2.CouchDB;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties({ "id", "revision" })
-public class DBArtikel16 {
+public class Artikel {
     @JsonProperty("_id")
     private String id;
     @JsonProperty("_rev")
@@ -21,21 +19,20 @@ public class DBArtikel16 {
     private String mge;
     private double preis;
 
-    private List<DBBPos> bPos;
+    private List<BPos> BPos;
 
-    public DBArtikel16() {
+    public Artikel() {
         this.artbez = "";
         this.mge = "";
-        bPos = new ArrayList<DBBPos>();
+        BPos = new ArrayList<BPos>();
     }
 
-    public DBArtikel16(int artnr, String artbez, String mge, double preis) {
+    public Artikel(int artnr, String artbez, String mge, double preis) {
         this.artnr = artnr;
         this.artbez = artbez;
         this.mge = mge;
         this.preis = preis;
     }
-
 
     public String getId() {
         return id;
@@ -80,15 +77,17 @@ public class DBArtikel16 {
     public double getPreis() {
         return preis;
     }
+
     public void setPreis(double preis) {
         this.preis = preis;
     }
 
-    public List<DBBPos> getbPos() {
-        return bPos;
+    public List<BPos> getBPos() {
+        return BPos;
     }
 
-    public void setbPos(List<DBBPos> bPos) {
-        this.bPos = bPos;
+    public void setBPos(List<BPos> BPos) {
+        this.BPos = BPos;
     }
+
 }

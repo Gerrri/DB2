@@ -1,6 +1,6 @@
 package DB2.Hilfsklassen;
 
-import DB2.Objects.Artikel;
+import DB2.Objects.ArtikelSQL;
 import DB2.SQL.SQLHandler;
 import org.xml.sax.Attributes;
 import org.xml.sax.Locator;
@@ -11,8 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContentHandlerVALArtikel extends MyContentHandlerVAL {
-    Artikel artikel;
-    List<Artikel> artikelList = new ArrayList<>();
+    ArtikelSQL artikel;
+    List<ArtikelSQL> artikelList = new ArrayList<>();
     String aktwert;
     SQLHandler sql;
 
@@ -26,7 +26,7 @@ public class ContentHandlerVALArtikel extends MyContentHandlerVAL {
         sql = SQLHandler.getSQLHandler();
 
 
-        for(Artikel a : artikelList){
+        for(ArtikelSQL a : artikelList){
             int artnr = a.getArtnr();
             String artbez = a.getArtbez();
             String mge = a.getMge();
@@ -73,7 +73,7 @@ public class ContentHandlerVALArtikel extends MyContentHandlerVAL {
 
             switch (qName) {
                 case "ARTNR":
-                    artikel = new Artikel();
+                    artikel = new ArtikelSQL();
                     artikel.setArtnr(Integer.parseInt(aktwert));
                     break;
 
@@ -96,10 +96,10 @@ public class ContentHandlerVALArtikel extends MyContentHandlerVAL {
                 case "EDAT":
                     artikel.setEdat(aktwert);
 
-                    //WENN validierung an und Artikel OK hinzufügen
+                    //WENN validierung an und ArtikelSQL OK hinzufügen
                     if (val) {
                         if (artikel.validateArtikel()) {
-                            System.out.println("-I-> Artikel Valide");
+                            System.out.println("-I-> ArtikelSQL Valide");
                             artikelList.add(artikel);
                         } else {
                             throw new SAXException();

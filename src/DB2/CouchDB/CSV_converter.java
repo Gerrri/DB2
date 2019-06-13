@@ -1,11 +1,9 @@
 package DB2.CouchDB;
 
-import DB2.Objects.Artikel;
 import DB2.SQL.SQLHandler;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CSV_converter {
@@ -32,7 +30,7 @@ public class CSV_converter {
 
     public void artikelliste_to_CSV(List<Artikel> al){
 
-        List<DBBPos> lb;
+        List<BPos> lb;
 
         try {
             FileWriter csvWriter = new FileWriter("Artikel.csv");
@@ -48,7 +46,7 @@ public class CSV_converter {
 
                 //dbpos
                 lb = SQLHandler.getSQLHandler().select_DBPos_by_ARTNR(a.getArtnr());
-                for(DBBPos b : lb){
+                for(BPos b : lb){
                     csvWriter.append(";");
                     csvWriter.append(Integer.toString(b.getBestnr()));
                     csvWriter.append(";");

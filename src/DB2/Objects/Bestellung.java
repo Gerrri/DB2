@@ -10,7 +10,7 @@ public class Bestellung {
     private int status;
     private double rSUM = 0;
     private int mge;
-    private List<Artikel> artList = new ArrayList<>();
+    private List<ArtikelSQL> artList = new ArrayList<>();
 
 
     public int getBstNR() {
@@ -49,23 +49,23 @@ public class Bestellung {
         this.mge = mge;
     }
 
-    public List<Artikel> getArtList() {
+    public List<ArtikelSQL> getArtList() {
         return artList;
     }
 
-    public void addArt(Artikel artikel){
+    public void addArt(ArtikelSQL artikel){
         artList.add(artikel);
         rSUM += artikel.getPreis();
     }
 
-    public void addArt(List<Artikel> artikelLst){
-        for(Artikel artikel:artikelLst){
+    public void addArt(List<ArtikelSQL> artikelLst){
+        for(ArtikelSQL artikel:artikelLst){
             addArt(artikel);
         }
     }
 
-    public boolean delArt(Artikel artikel){
-        for(Artikel temp:artList){
+    public boolean delArt(ArtikelSQL artikel){
+        for(ArtikelSQL temp:artList){
             if(temp.getArtnr()==artikel.getArtnr()){
                 return artList.remove(temp);
             }
@@ -108,10 +108,10 @@ public class Bestellung {
         System.out.println("Status       : "+ status);
         System.out.println("rSUM         : "+ rSUM);
         System.out.println("mge          : "+ mge);
-        System.out.println("------------- Alle Artikel -------------");
+        System.out.println("------------- Alle ArtikelSQL -------------");
         int nr=1;
-        for(Artikel a: artList) {
-            System.out.println("    Artikel Nr   : "+ nr);
+        for(ArtikelSQL a: artList) {
+            System.out.println("    ArtikelSQL Nr   : "+ nr);
             System.out.println("    Artikelnummer: "+ a.getArtnr());
             System.out.println("    Artikelbez   : "+ a.getArtbez());
             System.out.println("    menge        : "+ a.getMge());
@@ -119,7 +119,7 @@ public class Bestellung {
             System.out.println("    Kühl         : "+ a.getKuehl());
             System.out.println("    edat         : "+ a.getEdat());
         }
-        System.out.println("------------- Alle Artikel -------------");
+        System.out.println("------------- Alle ArtikelSQL -------------");
     }
 
 }
