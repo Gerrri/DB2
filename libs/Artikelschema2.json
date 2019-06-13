@@ -1,0 +1,17 @@
+{
+	"type" : "array",
+	"properties" : { 
+ 			    "artnr": {
+			       "type" : "integer"
+		        },
+		        "artbez" : {
+			       "type" : "string"
+		        },
+		        "preis" : {
+			       "type" : "number",
+			       "minimum" : 0
+				} 
+			
+		
+	}		
+}

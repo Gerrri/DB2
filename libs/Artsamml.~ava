@@ -1,0 +1,18 @@
+  // Ende Attribute
+import java.util.List;
+class Artsamml {
+  // Anfang Attribute
+  List<Artikel> artsatz;
+  
+  
+  // Anfang Methoden
+  public List<Artikel> getArtsatz() {
+    return artsatz;
+  }
+
+  public void setArtsatz(List<Artikel> artsatz) {
+    this.artsatz = artsatz;
+  }
+
+  // Ende Methoden
+}

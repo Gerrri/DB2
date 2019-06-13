@@ -1,5 +1,7 @@
 package DB2;
 
+import DB2.CouchDB.CSV_converter;
+import DB2.CouchDB.CouchArtikel16;
 import DB2.Hilfsklassen.*;
 import DB2.SQL.SQLHandler;
 
@@ -23,8 +25,8 @@ public class main {
             System.out.println("Bitte geben Sie '2' ein, wenn Sie Kunden updaten wollen.");
             System.out.println("Bitte geben Sie '3' ein, wenn Sie Artikel hinzufuegen wollen. [XSD]");
             System.out.println("Bitte geben Sie '4' ein, wenn Sie Bestellungen hinzufuegen wollen. [DTD]");
-            System.out.println("Bitte geben Sie '6' ein, wenn Sie eine CSV aus Artikeln erstellen wollen");
-            System.out.println("Bitte geben Sie '7' ein, um die ausgelesene CSV in die CouchDB einzulesen.");
+            System.out.println("Bitte geben Sie '6' ein, wenn Sie CouchDB Funktionen nutzen wollen");
+
             auswahl = Integer.parseInt(br1.readLine());
             if(auswahl == 2){
                 System.out.println("Waehlen Sie bitte, ob Sie das Update zuruecksetzen wollen, oder ob Sie es ausführen wollen!");
@@ -83,7 +85,8 @@ public class main {
                 break;
 
             case 6:
-                CSV_converter.getInstance().artikelliste_to_CSV(SQLHandler.getSQLHandler().select_alle_Artikel());
+                CouchArtikel16 ca = new CouchArtikel16();
+                ca.menu();
                 break;
 
             case 7:

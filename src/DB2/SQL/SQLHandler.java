@@ -1,5 +1,6 @@
 package DB2.SQL;
 
+import DB2.CouchDB.DBBPos;
 import DB2.Objects.Artikel;
 import DB2.Objects.Bestellung;
 import DB2.Objects.Kunde;
@@ -179,6 +180,39 @@ public class SQLHandler {
         return k;
     }
 
+    public List<DBBPos> select_DBPos_by_ARTNR (int ARTNR){
+        List<DBBPos> lb = new ArrayList<>();
+        DBBPos b = null;
+        sql = "SELECT * FROM BPOS WHERE ARTNR="+ARTNR;
+
+        try {
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(sql);
+
+            rs.next();
+            String s;
+            double d;
+            String[] arr = new String[2];
+
+
+            while(rs.next()){
+
+                b = new DBBPos();
+                b.setBestnr(Integer.parseInt(rs.getNString("BSTNR")));
+                b.setMenge(Integer.parseInt(rs.getNString("MENGE")));
+
+                lb.add(b);
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return lb;
+    }
+
+
     public boolean update_kunde (Kunde k){
         boolean erg = false;
         sql = "UPDATE KUNDE SET KNAME = '" + k.getKname() +
@@ -319,6 +353,8 @@ public class SQLHandler {
             System.out.println(e.getMessage());
         }
     }
+
+
 
 
 }

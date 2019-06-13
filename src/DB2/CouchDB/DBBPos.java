@@ -1,13 +1,16 @@
-package DB2.Objects;
+package DB2.CouchDB;
 
-public class BPos {
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class DBBPos {
     private int bestnr;
     private int menge;
 
-    public BPos() {
+    public DBBPos() {
     }
 
-    public BPos(int bestnr, int menge) {
+    public DBBPos(int bestnr, int menge) {
         this.bestnr = bestnr;
         this.menge = menge;
     }
